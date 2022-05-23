@@ -59,7 +59,7 @@ export const Line = styled("div")(({ theme }) => ({
 
 /**
  * About Body
- * Content => [Description, Image]
+ * Content => [Title, Description, Image]
  */
 
 // Body

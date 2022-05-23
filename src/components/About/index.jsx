@@ -30,7 +30,7 @@ const About = () => {
         {/* Image */}
         <AboutImageContainer>
           <AboutImage
-            src={aboutData.image === 2 ? theme.aboutimg1 : theme.aboutimg2}
+            src={aboutData.image === 1 ? theme.aboutimg1 : theme.aboutimg2}
             alt=""
           />
         </AboutImageContainer>
