@@ -13,6 +13,7 @@ const Card = ({ education }) => {
   return (
     <Fade direction="up" style={{ width: "100%" }}>
       <Container key={id}>
+        {/* Rounded Image */}
         <ImageContainer>
           <Image
             src={theme.type === "light" ? eduImgBlack : eduImgWhite}
@@ -20,10 +21,13 @@ const Card = ({ education }) => {
           />
         </ImageContainer>
         <Box ml="0.6rem">
+          {/* Duration */}
           <Duration>
             {startYear}-{endYear}
           </Duration>
+          {/* Course (title) */}
           <Course>{course}</Course>
+          {/* Institution */}
           <Institution>{institution}</Institution>
         </Box>
       </Container>
