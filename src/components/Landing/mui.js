@@ -1,7 +1,7 @@
 import { Box, Button, styled } from "@mui/material"
 import "../../App.css"
 
-// Section
+// Landing Section
 export const LandingSection = styled("section")({
   display: "flex",
   justifyContent: "center",
@@ -9,7 +9,7 @@ export const LandingSection = styled("section")({
   height: "100vh",
 })
 
-// Main Container
+// Main Landing Container
 export const LandingContainer = styled("div")(({ theme }) => ({
   display: "flex",
   justifyContent: "center",
