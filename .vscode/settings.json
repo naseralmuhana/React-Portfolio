@@ -10,7 +10,9 @@
         "eduimg",
         "expimg",
         "Fastify",
+        "Globex",
         "Haxe",
+        "jobtitle",
         "kqdyek",
         "Lightroom",
         "materialui",
@@ -29,6 +31,7 @@
         "vuetifyjs",
         "Webex",
         "webix",
-        "wolframalpha"
+        "wolframalpha",
+        "Wonka"
     ]
 }

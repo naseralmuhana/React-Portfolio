@@ -1,4 +1,5 @@
 import { useTheme } from "@mui/material"
+import { Fade, Slide } from "react-awesome-reveal"
 import { aboutData } from "../../data/aboutData"
 // prettier-ignore
 import { 
@@ -18,22 +19,28 @@ const About = () => {
       {/* Body */}
       <AboutBody>
         {/* Description */}
+
         <AboutDescriptionContainer>
-          <AboutTitle>{aboutData.title}</AboutTitle>
-          <AboutDescription>
-            {aboutData.description1}
-            <br />
-            <br />
-            {aboutData.description2}
-          </AboutDescription>
+          <Slide direction="left">
+            <AboutTitle>{aboutData.title}</AboutTitle>
+            <AboutDescription>
+              {aboutData.description1}
+              <br />
+              <br />
+              {aboutData.description2}
+            </AboutDescription>
+          </Slide>
         </AboutDescriptionContainer>
+
         {/* Image */}
-        <AboutImageContainer>
-          <AboutImage
-            src={aboutData.image === 1 ? theme.aboutimg1 : theme.aboutimg2}
-            alt=""
-          />
-        </AboutImageContainer>
+        <Fade direction="right">
+          <AboutImageContainer>
+            <AboutImage
+              src={aboutData.image === 1 ? theme.aboutimg1 : theme.aboutimg2}
+              alt=""
+            />
+          </AboutImageContainer>
+        </Fade>
       </AboutBody>
     </AboutSection>
   )

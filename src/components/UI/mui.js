@@ -1,7 +1,7 @@
 import { styled } from "@mui/material"
 import "../../App.css"
 
-// Eduction Section
+// Section used for [Education, Experience]
 export const Section = styled("section")(({ theme }) => ({
   backgroundColor: theme.secondary,
   minHeight: "100vh",
@@ -10,23 +10,17 @@ export const Section = styled("section")(({ theme }) => ({
   },
 }))
 
-/**
- * Eduction Body
- * Content => [Description, Title, Card]
- */
-
-// Eduction Body
-export const Body = styled("div")({
+// Section Body
+export const SectionBody = styled("div")({
   display: "flex",
   flexDirection: "row",
   alignItems: "center",
   justifyContent: "center",
   width: "100%",
-  color: "hsla(117, 56%, 49%, 0.702)",
 })
 
-// Eduction Description Container
-export const Description = styled("div")(({ theme }) => ({
+// Section Description Container
+export const SectionDescriptionContainer = styled("div")(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   alignItems: "flex-start",
@@ -44,8 +38,8 @@ export const Description = styled("div")(({ theme }) => ({
   },
 }))
 
-// Eduction Description Title
-export const Title = styled("h1")(({ theme }) => ({
+// Section Title
+export const SectionTitle = styled("h1")(({ theme }) => ({
   color: theme.primary,
   fontSize: "3.5rem",
   fontFamily: "var(--primaryFont)",
@@ -62,8 +56,8 @@ export const Title = styled("h1")(({ theme }) => ({
   },
 }))
 
-// Image Container
-export const ImageContainer = styled("div")(({ theme }) => ({
+// Section Image Container
+export const SectionImageContainer = styled("div")(({ theme }) => ({
   flex: 0.35,
   padding: "1rem",
   marginTop: "1rem",

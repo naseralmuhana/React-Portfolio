@@ -1,9 +1,9 @@
 import { styled } from "@mui/material"
-import "../../App.css"
+import "../../../App.css"
 
 /**
- * Eduction Card
- * for Card.jsx
+ * Card
+ *
  */
 
 // Container
@@ -55,7 +55,7 @@ export const Image = styled("img")(({ theme }) => ({
   },
 }))
 
-// Details Eduction Duration
+//  Duration
 export const Duration = styled("h6")(({ theme }) => ({
   color: theme.primary,
   fontFamily: "var(--primaryFont)",
@@ -67,8 +67,8 @@ export const Duration = styled("h6")(({ theme }) => ({
   },
 }))
 
-// Details Eduction Course(Title)
-export const Course = styled("h4")(({ theme }) => ({
+// Title
+export const Title = styled("h4")(({ theme }) => ({
   color: theme.tertiary,
   fontFamily: "var(--primaryFont)",
   fontSize: "1.225rem",
@@ -79,8 +79,8 @@ export const Course = styled("h4")(({ theme }) => ({
   },
 }))
 
-// Details Eduction Institution
-export const Institution = styled("h5")(({ theme }) => ({
+// Content
+export const Content = styled("h5")(({ theme }) => ({
   color: theme.tertiary80,
   fontFamily: "var(--primaryFont)",
   fontSize: "1.15rem",

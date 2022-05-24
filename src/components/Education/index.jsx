@@ -1,30 +1,46 @@
 import { useTheme } from "@mui/material"
 import { educationData } from "../../data/eductionData"
-import Card from "./Card"
+import Card from "../UI/Card"
 // prettier-ignore
-import { Section, Body, Description, Title, ImageContainer } from "./mui"
+import {
+  Section, SectionBody, SectionDescriptionContainer, SectionImageContainer, SectionTitle
+} from "../UI/mui"
+import eduImgWhite from "../../assets/svg/education/eduImgWhite.svg"
+import eduImgBlack from "../../assets/svg/education/eduImgBlack.svg"
+import { Fade } from "react-awesome-reveal"
 
 const Education = () => {
   const theme = useTheme()
 
   const Cards = educationData.map((education) => (
-    <Card key={education.id} education={education} />
+    <Card
+      key={education.id}
+      id={education.id}
+      title={education.course}
+      content={education.institution}
+      startYear={education.startYear}
+      endYear={education.endYear}
+      imgDark={eduImgBlack}
+      imgLight={eduImgWhite}
+    />
   ))
 
   return (
     <Section id="education">
       {/* Body */}
-      <Body>
+      <SectionBody>
         {/* Description */}
-        <Description>
-          <Title>Education</Title>
+        <SectionDescriptionContainer>
+          <SectionTitle>Education</SectionTitle>
           {Cards}
-        </Description>
+        </SectionDescriptionContainer>
         {/* Image */}
-        <ImageContainer>
-          <img src={theme.eduimg} alt="" width="100%" />
-        </ImageContainer>
-      </Body>
+        <Fade direction="right">
+          <SectionImageContainer>
+            <img src={theme.eduimg} alt="" width="100%" />
+          </SectionImageContainer>
+        </Fade>
+      </SectionBody>
     </Section>
   )
 }
