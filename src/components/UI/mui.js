@@ -11,7 +11,7 @@ export const Section = styled("section")(({ theme }) => ({
 }))
 
 // Section Body
-export const SectionBody = styled("div")({
+export const Body = styled("div")({
   display: "flex",
   flexDirection: "row",
   alignItems: "center",
@@ -20,7 +20,7 @@ export const SectionBody = styled("div")({
 })
 
 // Section Description Container
-export const SectionDescriptionContainer = styled("div")(({ theme }) => ({
+export const DescriptionContainer = styled("div")(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   alignItems: "flex-start",
@@ -39,7 +39,7 @@ export const SectionDescriptionContainer = styled("div")(({ theme }) => ({
 }))
 
 // Section Title
-export const SectionTitle = styled("h1")(({ theme }) => ({
+export const Title = styled("h1")(({ theme }) => ({
   color: theme.primary,
   fontSize: "3.5rem",
   fontFamily: "var(--primaryFont)",
@@ -57,7 +57,7 @@ export const SectionTitle = styled("h1")(({ theme }) => ({
 }))
 
 // Section Image Container
-export const SectionImageContainer = styled("div")(({ theme }) => ({
+export const ImageContainer = styled("div")(({ theme }) => ({
   flex: 0.35,
   padding: "1rem",
   marginTop: "1rem",

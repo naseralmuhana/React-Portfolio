@@ -2,15 +2,20 @@ import { Box, Button, styled } from "@mui/material"
 import "../../App.css"
 
 // Landing Section
-export const LandingSection = styled("section")({
+export const Section = styled("section")({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
   height: "100vh",
 })
 
-// Main Landing Container
-export const LandingContainer = styled("div")(({ theme }) => ({
+/**
+ * Landing Body
+ * Content => [Left Container, Right Container]
+ */
+
+// Landing Body
+export const Body = styled("div")(({ theme }) => ({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
@@ -29,7 +34,7 @@ export const LandingContainer = styled("div")(({ theme }) => ({
  */
 
 // Left Container
-export const LandingContainerLeft = styled("div")(({ theme }) => ({
+export const LeftContainer = styled("div")(({ theme }) => ({
   backgroundColor: theme.primary,
   flex: "35%",
   height: "100%",
@@ -46,8 +51,8 @@ export const LandingContainerLeft = styled("div")(({ theme }) => ({
   },
 }))
 
-// Content Container
-export const LCLContent = styled("div")(({ theme }) => ({
+// Left Container Content
+export const LeftContainerContent = styled("div")(({ theme }) => ({
   margin: "3rem",
   width: "100%",
   display: "flex",
@@ -77,11 +82,11 @@ export const SocialIcon = styled(Box)(({ theme }) => ({
 
 /**
  * Centered Rounded Image
- * Content => [img]
+ * Content => [Image]
  */
 
 // Rounded Image
-export const LandingImage = styled("img")(({ theme, draweropen }) => {
+export const Image = styled("img")(({ theme, draweropen }) => {
   const opacity = draweropen === "true" ? 0 : 1
   return {
     borderColor: theme.secondary,
@@ -117,11 +122,11 @@ export const LandingImage = styled("img")(({ theme, draweropen }) => {
 
 /**
  * Right Container
- * Content => [Title , Name , Description, Actions]
+ * Content => [Title , Name , Description, Actions(Resume Button, Contact Button)]
  */
 
 // Right Container
-export const LandingContainerRight = styled("div")(({ theme }) => ({
+export const RightContainer = styled("div")(({ theme }) => ({
   backgroundColor: theme.secondary,
   flex: "65%",
   height: "100%",
@@ -142,12 +147,11 @@ export const LandingContainerRight = styled("div")(({ theme }) => ({
 }))
 
 // Content Container
-export const LCRContent = styled("div")(({ theme }) => ({
+export const RightContainerContent = styled("div")(({ theme }) => ({
   color: theme.tertiary,
   marginRight: "7rem",
   width: "45%",
   fontFamily: "var(--primaryFont)",
-  fontStyle: "normal",
   [theme.breakpoints.down(900)]: {
     width: "60%",
     marginTop: "10%",
@@ -167,7 +171,7 @@ export const LCRContent = styled("div")(({ theme }) => ({
 }))
 
 // Title
-export const LCRTitle = styled("h6")(({ theme }) => ({
+export const Title = styled("h6")(({ theme }) => ({
   fontWeight: 500,
   fontSize: "1.25rem",
   marginBottom: "-0.85rem",
@@ -182,7 +186,7 @@ export const LCRTitle = styled("h6")(({ theme }) => ({
 }))
 
 // Name
-export const LCTName = styled("h1")(({ theme }) => ({
+export const Name = styled("h1")(({ theme }) => ({
   fontWeight: 600,
   fontSize: "3.25rem",
   margin: "1rem 0",
@@ -197,7 +201,7 @@ export const LCTName = styled("h1")(({ theme }) => ({
 }))
 
 // Description
-export const LCTDescription = styled("p")(({ theme }) => ({
+export const Description = styled("p")(({ theme }) => ({
   fontWeight: 500,
   fontSize: "1.15rem",
   marginTop: "1.45rem",
@@ -215,8 +219,8 @@ export const LCTDescription = styled("p")(({ theme }) => ({
   },
 }))
 
-// Actions Container
-export const LCTActionsContainer = styled("div")(({ theme }) => ({
+// Actions
+export const Actions = styled("div")(({ theme }) => ({
   width: "350px",
   marginTop: "2rem",
   display: "flex",
@@ -241,14 +245,14 @@ export const LCTActionsContainer = styled("div")(({ theme }) => ({
 }))
 
 // Resume Button
-export const ResumeButton = styled(Button)(({ theme }) => ({
+export const ResumeBtn = styled(Button)(({ theme }) => ({
   color: theme.primary,
   borderRadius: "30px",
   textTransform: "inherit",
   textDecoration: "none",
   width: "150px",
   fontSize: "1rem",
-  fontWeight: "500",
+  fontWeight: 500,
   height: "50px",
   fontFamily: "var(--primaryFont)",
   border: `3px solid ${theme.primary}`,
@@ -264,7 +268,7 @@ export const ResumeButton = styled(Button)(({ theme }) => ({
 }))
 
 // Contact Button
-export const ContactButton = styled(Button)(({ theme }) => ({
+export const ContactBtn = styled(Button)(({ theme }) => ({
   backgroundColor: theme.primary,
   color: theme.secondary,
   borderRadius: "30px",
@@ -273,7 +277,7 @@ export const ContactButton = styled(Button)(({ theme }) => ({
   width: "150px",
   height: "50px",
   fontSize: "1rem",
-  fontWeight: "500",
+  fontWeight: 500,
   fontFamily: "var(--primaryFont)",
   border: `3px solid ${theme.primary}`,
   transition: "100ms ease-out",

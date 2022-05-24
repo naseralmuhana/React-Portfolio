@@ -13,6 +13,7 @@ const Card = ({
   imgDark,
   imgLight,
   fadeStyle,
+  imgStyle,
 }) => {
   const theme = useTheme()
 
@@ -21,7 +22,11 @@ const Card = ({
       <Container key={id}>
         {/* Rounded Image */}
         <ImageContainer>
-          <Image src={theme.type === "light" ? imgDark : imgLight} alt="" />
+          <Image
+            src={theme.type === "light" ? imgDark : imgLight}
+            alt=""
+            sx={imgStyle}
+          />
         </ImageContainer>
         <Box ml="0.6rem">
           {/* Duration */}

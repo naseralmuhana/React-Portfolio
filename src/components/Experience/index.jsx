@@ -2,7 +2,7 @@ import { useTheme } from "@mui/material"
 import { experienceData } from "../../data/experienceData"
 // prettier-ignore
 import { 
-    Section, SectionBody, SectionDescriptionContainer, SectionImageContainer, SectionTitle 
+    Section, Body, DescriptionContainer, ImageContainer, Title 
 } from "../UI/mui"
 import expImgWhite from "../../assets/svg/experience/expImgWhite.svg"
 import expImgBlack from "../../assets/svg/experience/expImgBlack.svg"
@@ -22,6 +22,9 @@ const Experience = () => {
         display: "flex",
         justifyContent: "flex-end",
       }}
+      imgStyle={{
+        width: "36px",
+      }}
       key={experience.id}
       id={experience.id}
       title={experience.jobtitle}
@@ -36,21 +39,21 @@ const Experience = () => {
   return (
     <Section id="experience">
       {/* Body */}
-      <SectionBody>
+      <Body>
         {/* Image */}
-        <Fade direction="left">
-          <SectionImageContainer sx={{ ml: "7%" }}>
+        <ImageContainer sx={{ ml: "7%" }}>
+          <Fade direction="left">
             <img src={theme.expimg} alt="" width="100%" />
-          </SectionImageContainer>
-        </Fade>
+          </Fade>
+        </ImageContainer>
         {/* Description */}
-        <SectionDescriptionContainer
+        <DescriptionContainer
           sx={{ alignItems: "flex-end", ml: 0, mr: "2rem" }}
         >
-          <SectionTitle>Experience</SectionTitle>
+          <Title>Experience</Title>
           {Cards}
-        </SectionDescriptionContainer>
-      </SectionBody>
+        </DescriptionContainer>
+      </Body>
     </Section>
   )
 }

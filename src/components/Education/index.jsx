@@ -3,7 +3,7 @@ import { educationData } from "../../data/eductionData"
 import Card from "../UI/Card"
 // prettier-ignore
 import {
-  Section, SectionBody, SectionDescriptionContainer, SectionImageContainer, SectionTitle
+  Section, Body, DescriptionContainer, ImageContainer, Title
 } from "../UI/mui"
 import eduImgWhite from "../../assets/svg/education/eduImgWhite.svg"
 import eduImgBlack from "../../assets/svg/education/eduImgBlack.svg"
@@ -28,19 +28,20 @@ const Education = () => {
   return (
     <Section id="education">
       {/* Body */}
-      <SectionBody>
+      <Body>
         {/* Description */}
-        <SectionDescriptionContainer>
-          <SectionTitle>Education</SectionTitle>
+        <DescriptionContainer>
+          <Title>Education</Title>
           {Cards}
-        </SectionDescriptionContainer>
+        </DescriptionContainer>
         {/* Image */}
-        <Fade direction="right">
-          <SectionImageContainer>
+
+        <ImageContainer>
+          <Fade direction="right">
             <img src={theme.eduimg} alt="" width="100%" />
-          </SectionImageContainer>
-        </Fade>
-      </SectionBody>
+          </Fade>
+        </ImageContainer>
+      </Body>
     </Section>
   )
 }

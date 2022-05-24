@@ -2,7 +2,7 @@ import React from "react"
 import Helmet from "react-helmet"
 // prettier-ignore
 import { 
-  Education, About, Landing, Navbar, Skills, Experience 
+  Education, About, Landing, Navbar, Skills, Experience, Projects 
 } from "../../components"
 import { headerData } from "../../data/headerData"
 
@@ -19,6 +19,7 @@ const Main = () => {
       <Education />
       <Skills />
       <Experience />
+      <Projects />
     </>
   )
 }

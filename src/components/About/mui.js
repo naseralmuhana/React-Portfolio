@@ -2,7 +2,7 @@ import { styled } from "@mui/material"
 import "../../App.css"
 
 // About Section
-export const AboutSection = styled("section")(({ theme }) => ({
+export const Section = styled("section")(({ theme }) => ({
   backgroundColor: theme.secondary,
   minHeight: "100vh",
   position: "relative",
@@ -63,7 +63,7 @@ export const Line = styled("div")(({ theme }) => ({
  */
 
 // Body
-export const AboutBody = styled("div")(({ theme }) => ({
+export const Body = styled("div")(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "space-around",
@@ -78,7 +78,7 @@ export const AboutBody = styled("div")(({ theme }) => ({
 }))
 
 // Description Container
-export const AboutDescriptionContainer = styled("div")(({ theme }) => ({
+export const DescriptionContainer = styled("div")(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   alignItems: "flex-start",
@@ -94,7 +94,7 @@ export const AboutDescriptionContainer = styled("div")(({ theme }) => ({
 }))
 
 // Title
-export const AboutTitle = styled("h2")(({ theme }) => ({
+export const Title = styled("h2")(({ theme }) => ({
   color: theme.primary,
   fontFamily: "var(--primaryFont)",
   fontSize: "3.5rem",
@@ -116,7 +116,7 @@ export const AboutTitle = styled("h2")(({ theme }) => ({
 }))
 
 // Description
-export const AboutDescription = styled("p")(({ theme }) => ({
+export const Description = styled("p")(({ theme }) => ({
   color: theme.tertiary80,
   fontFamily: "var(--primaryFont)",
   fontSize: "1.25rem",
@@ -132,13 +132,13 @@ export const AboutDescription = styled("p")(({ theme }) => ({
 }))
 
 // Image Container
-export const AboutImageContainer = styled("div")({
+export const ImageContainer = styled("div")({
   marginTop: "40px",
   pointerEvents: "none",
 })
 
 // Image
-export const AboutImage = styled("img")(({ theme }) => ({
+export const Image = styled("img")(({ theme }) => ({
   width: "380px",
   flex: 0.5,
   [theme.breakpoints.between(992, 1380)]: {

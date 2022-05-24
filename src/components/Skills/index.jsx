@@ -3,18 +3,19 @@ import { skillsData } from "../../data/skillsData"
 import { skillsImage } from "../../utils/skillsImage"
 // prettier-ignore
 import { 
-  Card, CardImage, CardTitle, Scroll, ScrollContainer, Section, Title, TitleContainer 
+  Card, CardImage, CardTitle, Scroll, Body, Section, Title, Header 
 } from "./mui"
 
 const Skills = () => {
   return (
     <Section id="skills">
-      {/* Title */}
-      <TitleContainer>
+      {/* Header*/}
+      <Header>
         <Title>Skills</Title>
-      </TitleContainer>
-      {/* Scroll */}
-      <ScrollContainer>
+      </Header>
+      {/* Body */}
+      <Body>
+        {/* Scroll */}
         <Scroll>
           <Marquee
             gradient={false}
@@ -31,7 +32,7 @@ const Skills = () => {
             ))}
           </Marquee>
         </Scroll>
-      </ScrollContainer>
+      </Body>
     </Section>
   )
 }

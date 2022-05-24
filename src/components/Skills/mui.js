@@ -27,8 +27,8 @@ export const Section = styled("section")(({ theme }) => ({
  * Content => [Title]
  */
 
-// Skills Title Container
-export const TitleContainer = styled("div")({
+// Skills Header
+export const Header = styled("div")({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
@@ -40,8 +40,6 @@ export const Title = styled("h2")(({ theme }) => ({
   textAlign: "center",
   fontFamily: "var(--primaryFont)",
   fontSize: "3.5rem",
-  fontWeight: "bold",
-  fontStyle: "normal",
   [theme.breakpoints.down(992)]: {
     fontSize: "3.2rem",
   },
@@ -54,12 +52,12 @@ export const Title = styled("h2")(({ theme }) => ({
 }))
 
 /**
- * Skills Scroll
- * Content => [Title]
+ * Body
+ * Content => [Scroll(Cards)]
  */
 
-// Skills Scroll Container
-export const ScrollContainer = styled("div")(({ theme }) => ({
+// Skills Body
+export const Body = styled("div")(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
@@ -135,7 +133,6 @@ export const CardTitle = styled("h3")(({ theme }) => ({
   fontSize: "22px",
   textAlign: "center",
   fontWeight: "500",
-  fontStyle: "normal",
   marginTop: "1rem",
   [theme.breakpoints.down(992)]: {
     fontSize: "20px",
