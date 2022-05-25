@@ -5,7 +5,7 @@ import "../../../App.css"
 
 // Card Container
 export const Card = styled("div")(({ theme }) => ({
-  backgroundColor: theme.primary400,
+  // backgroundColor: theme.primary400,
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
@@ -20,6 +20,12 @@ export const Card = styled("div")(({ theme }) => ({
   cursor: "pointer",
   position: "relative",
   overflow: "hidden",
+  transition: "transform 300ms ease-in-out, background-color 300ms ease-in-out",
+  backgroundColor: theme.primary30,
+  "&:hover": {
+    transform: "scale(1.05)",
+    backgroundColor: theme.primary50,
+  },
   "&:hover img": {
     opacity: 0,
   },
@@ -138,7 +144,8 @@ export const Tags = styled("div")(({ theme }) => ({
   justifyContent: "center",
   gap: "0.5rem",
   position: "absolute",
-  right: "0",
+  // right: "0",
+  right: "-1px",
   bottom: "20px",
   width: "140px",
   padding: "0.825rem",
