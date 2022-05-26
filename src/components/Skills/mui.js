@@ -52,7 +52,7 @@ export const Title = styled("h2")(({ theme }) => ({
 }))
 
 /**
- * Body
+ * Skills Body
  * Content => [Scroll(Cards)]
  */
 
