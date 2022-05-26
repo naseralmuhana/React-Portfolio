@@ -13,6 +13,7 @@
         "Fastify",
         "Globex",
         "Haxe",
+        "IMDB",
         "jobtitle",
         "kqdyek",
         "Lightroom",
@@ -26,6 +27,7 @@
         "Picsart",
         "premierepro",
         "Ramoray",
+        "Rockstar",
         "Strapi",
         "Themeboy",
         "Transponster",
@@ -37,6 +39,8 @@
         "Webex",
         "webix",
         "wolframalpha",
-        "Wonka"
+        "Wonka",
+        "wttr",
+        "WTTR"
     ]
 }

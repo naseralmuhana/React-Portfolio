@@ -2,7 +2,7 @@ import { styled } from "@mui/material"
 import "../../App.css"
 import { HiArrowRight } from "react-icons/hi"
 
-// Projects Section
+// Blog Section
 export const Section = styled("section")(({ theme }) => ({
   backgroundColor: theme.secondary,
   display: "flex",
@@ -15,11 +15,11 @@ export const Section = styled("section")(({ theme }) => ({
 }))
 
 /**
- * Projects Header
+ * Blog Header
  * Content => [Title]
  */
 
-// Projects Header
+// Blog Header
 export const Header = styled("div")({
   display: "flex",
   alignItems: "center",
@@ -28,7 +28,7 @@ export const Header = styled("div")({
   margin: "1rem",
 })
 
-// Projects Title
+// Blog Title
 export const Title = styled("h1")(({ theme }) => ({
   color: theme.primary,
   fontFamily: "var(--primaryFont)",
@@ -45,11 +45,11 @@ export const Title = styled("h1")(({ theme }) => ({
 }))
 
 /**
- * Projects Body
+ * Blog Body
  * Content => [Cards, ViewAll Button]
  */
 
-// Projects Body
+// Blog Body
 export const Body = styled("div")({
   display: "flex",
   flexDirection: "column",
@@ -58,10 +58,10 @@ export const Body = styled("div")({
   width: "100%",
 })
 
-// Projects Cards Container
+// Blog Cards Container
 export const CardsContainer = styled("div")(({ theme }) => ({
   display: "flex",
-  flexDirection: "row",
+  //   flexDirection: "row",
   alignItems: "center",
   justifyContent: "center",
   width: "100%",
@@ -80,13 +80,13 @@ export const CardsContainer = styled("div")(({ theme }) => ({
   // },
 }))
 
-// Projects ViewAll Container
+// Blog ViewAll Container
 export const ViewAllContainer = styled("div")(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "flex-end",
   width: "100%",
-  marginTop: "2rem",
+  marginTop: "1rem",
   padding: "2rem",
   "& a": {
     [theme.breakpoints.down(600)]: {
@@ -96,12 +96,12 @@ export const ViewAllContainer = styled("div")(({ theme }) => ({
     },
   },
   [theme.breakpoints.down(600)]: {
-    marginTop: "4rem",
+    marginTop: "2.5rem",
     position: "relative",
   },
 }))
 
-// Projects ViewAll Button
+// Blog ViewAll Button
 export const ViewAllBtn = styled("button")(({ theme }) => ({
   display: "flex",
   alignItems: "center",
@@ -126,7 +126,7 @@ export const ViewAllBtn = styled("button")(({ theme }) => ({
   },
 }))
 
-// Projects ViewAll Button Icon
+// Blog ViewAll Button Icon
 export const ViewAllIcon = styled(HiArrowRight)(({ theme }) => ({
   color: theme.tertiary,
   backgroundColor: theme.secondary70,
