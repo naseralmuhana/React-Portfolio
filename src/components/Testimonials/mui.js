@@ -166,6 +166,8 @@ export const Content = styled("div")({
 
 // Testimonial Card Image Container & image  style
 export const ImageContainer = styled("div")(({ theme }) => ({
+  cursor: "grab",
+  "&:active": { cursor: "grabbing" },
   backgroundColor: theme.secondary,
   display: "flex",
   alignItems: "center",
@@ -196,6 +198,8 @@ export const ImageContainer = styled("div")(({ theme }) => ({
 
 // Testimonial Card Details Container
 export const DetailsContainer = styled("div")(({ theme }) => ({
+  cursor: "grab",
+  "&:active": { cursor: "grabbing" },
   backgroundColor: theme.secondary,
   color: theme.tertiary,
   display: "flex",

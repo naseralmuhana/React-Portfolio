@@ -1,7 +1,11 @@
 // prettier-ignore
 import {
-    FaLinkedin, FaGithub, FaTwitter,  FaYoutube, FaBlogger
+    FaLinkedin, FaBlogger
 } from "react-icons/fa"
+// prettier-ignore
+import {
+  FaTwitter, FaLinkedinIn, FaGithub, FaYoutube, FaBloggerB, FaRedditAlien, FaStackOverflow, FaCodepen, FaInstagram, FaGitlab, FaMediumM, FaFacebookF
+} from 'react-icons/fa';
 
 export const socialsData = [
   {
@@ -13,6 +17,32 @@ export const socialsData = [
   { label: "Twitter", href: "https://twitter.com/", icon: FaTwitter },
   { label: "Youtube", href: "https://youtube.com/", icon: FaYoutube },
   { label: "Blogger", href: "https://www.blogger.com/", icon: FaBlogger },
+]
+export const socialsContactData = [
+  { href: "https://github.com/", label: "github", icon: FaGithub },
+  { href: "https://www.facebook.com/", label: "facebook", icon: FaFacebookF },
+  {
+    href: "https://www.linkedin.com/in",
+    label: "linkedIn",
+    icon: FaLinkedinIn,
+  },
+  { href: "https://www.instagram.com/", label: "instagram", icon: FaInstagram },
+  { href: "https://codepen.io/", label: "codepen", icon: FaCodepen },
+  { href: "https://twitter.com/", label: "twitter", icon: FaTwitter },
+  {
+    href: "https://www.reddit.com/user/",
+    label: "reddit",
+    icon: FaRedditAlien,
+  },
+  { href: "https://www.blogger.com/", label: "blogger", icon: FaBloggerB },
+  { href: "https://medium.com/@", label: "medium", icon: FaMediumM },
+  {
+    href: "https://stackoverflow.com/users/",
+    label: "stackOverflow",
+    icon: FaStackOverflow,
+  },
+  { href: "https://gitlab.com/", label: "gitlab", icon: FaGitlab },
+  { href: "https://youtube.com/", label: "youtube", icon: FaYoutube },
 ]
 
 // github: "https://github.com/",
