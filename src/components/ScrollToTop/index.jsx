@@ -2,7 +2,6 @@ import Box from "@mui/material/Box"
 import IconButton from "@mui/material/IconButton"
 import { styled } from "@mui/system"
 import { useEffect, useState } from "react"
-import { Slide } from "react-awesome-reveal"
 import { IoIosArrowDropupCircle } from "react-icons/io"
 import CustomTooltip from "../UI/CustomTooltip"
 
@@ -24,12 +23,12 @@ const ScrollToTop = () => {
     })
   }
 
-  window.addEventListener("scroll", toggleVisibility)
-  // useEffect(() => {
-  //   return () => {
-  //     window.removeEventListener("scroll", toggleVisibility)
-  //   }
-  // }, [])
+  useEffect(() => {
+    window.addEventListener("scroll", toggleVisibility)
+    return () => {
+      window.removeEventListener("scroll", toggleVisibility)
+    }
+  }, [])
 
   return (
     <Container isvisible={isVisible.toString()}>
