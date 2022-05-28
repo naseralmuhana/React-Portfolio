@@ -1,4 +1,4 @@
-import React, { useRef } from "react"
+import { useRef } from "react"
 import { testimonialsData } from "../../data/testimonialsData"
 import Slider from "react-slick"
 // prettier-ignore
@@ -64,14 +64,14 @@ const Testimonials = () => {
           <Btn
             onClick={gotoPrev}
             icon={FaArrowLeft}
-            iconAriaLabel="Previous"
+            iconAria="Previous"
             BtnStyle={{ left: "5%" }}
           />
           {/* nextBtn */}
           <Btn
             onClick={gotoNext}
             icon={FaArrowRight}
-            iconAriaLabel="Next"
+            iconAria="Next"
             BtnStyle={{ right: "5%" }}
           />
         </SliderContainer>

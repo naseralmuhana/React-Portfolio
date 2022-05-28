@@ -1,4 +1,4 @@
-import React from "react"
+import CustomTooltip from "../../UI/CustomTooltip"
 import { Btn, BtnIcon } from "./mui"
 
 const IconBtn = ({ href, name, icon, iconId }) => {
@@ -8,13 +8,20 @@ const IconBtn = ({ href, name, icon, iconId }) => {
   const btnIconId = `${name.replace(" ", "-").toLowerCase()}-demo`
 
   return (
-    <Btn href={href} target="_blank" rel="noreferrer" aria-labelledby={btnAria}>
-      <BtnIcon
-        component={icon}
-        id={btnIconId} //BtnIconId
-        aria-label={iconId}
-      />
-    </Btn>
+    <CustomTooltip title={iconId}>
+      <Btn
+        href={href}
+        target="_blank"
+        rel="noreferrer"
+        aria-labelledby={btnAria}
+      >
+        <BtnIcon
+          component={icon}
+          id={btnIconId} //BtnIconId
+          aria-label={iconId}
+        />
+      </Btn>
+    </CustomTooltip>
   )
 }
 

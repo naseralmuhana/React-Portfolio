@@ -3,6 +3,7 @@ import { Fade } from "react-awesome-reveal"
 import { contactsDetailsInfo } from "../../data/contactsData"
 import { socialsContactData } from "../../data/socialsData"
 import ContactsForm from "./ContactsForm"
+import CustomTooltip from "../UI/CustomTooltip"
 // prettier-ignore
 import {
   Body, ContactsDetails, Container, Image, Section, SocialIcon, SocialIconsContainer,
@@ -11,23 +12,17 @@ import PersonalDetails from "./PersonalDetails"
 
 const Contacts = () => {
   const theme = useTheme()
-  const contactsInfo = contactsDetailsInfo.map(
-    ({ component, href, icon, title }) => (
-      <PersonalDetails
-        key={title}
-        component={component}
-        href={href}
-        icon={icon}
-        title={title}
-      />
-    )
-  )
+  const contactsInfo = contactsDetailsInfo.map((info) => (
+    <PersonalDetails key={info.id} info={info} />
+  ))
   const socialsInfo = socialsContactData.map(({ href, icon, label }) => {
     const Icon = icon
     return (
-      <SocialIcon key={label} href={href} target="_blank" rel="noreferrer">
-        <Icon aria-label={label} />
-      </SocialIcon>
+      <CustomTooltip title={label}>
+        <SocialIcon key={label} href={href} target="_blank" rel="noreferrer">
+          <Icon aria-label={label} />
+        </SocialIcon>
+      </CustomTooltip>
     )
   })
   return (

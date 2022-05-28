@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import { projectsData } from "../../data/projectsData"
+import CustomTooltip from "../UI/CustomTooltip"
 
 //  prettier-ignore
 import {
@@ -29,10 +30,12 @@ const Projects = () => {
         {projectsData.length > 3 && (
           <ViewAllContainer>
             <Link to="/">
-              <ViewAllBtn>
-                View All
-                <ViewAllIcon />
-              </ViewAllBtn>
+              <CustomTooltip title="PROJECTS">
+                <ViewAllBtn>
+                  View All
+                  <ViewAllIcon />
+                </ViewAllBtn>
+              </CustomTooltip>
             </Link>
           </ViewAllContainer>
         )}

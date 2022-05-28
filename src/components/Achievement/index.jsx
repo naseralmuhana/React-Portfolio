@@ -1,4 +1,3 @@
-import React from "react"
 import { achievementData } from "../../data/achievementData"
 import AchievementCard from "./AchievementCard"
 // prettier-ignore

@@ -1,6 +1,6 @@
-import React from "react"
 import { Link } from "react-router-dom"
 import { blogData } from "../../data/blogData"
+import CustomTooltip from "../UI/CustomTooltip"
 import BlogCard from "./BlogCard"
 // prettier-ignore
 import { Body, CardsContainer, Header, Section, Title, ViewAllBtn, ViewAllContainer, ViewAllIcon } from "./mui"
@@ -14,7 +14,7 @@ const Blog = () => {
   return (
     <Section id="blog">
       <Header>
-        <Title>Blog</Title>
+        <Title>Blogs</Title>
       </Header>
       <Body>
         <CardsContainer>{cards}</CardsContainer>
@@ -23,10 +23,12 @@ const Blog = () => {
       {blogData.length > 3 && (
         <ViewAllContainer>
           <Link to="/">
-            <ViewAllBtn>
-              View All
-              <ViewAllIcon />
-            </ViewAllBtn>
+            <CustomTooltip title="BLOGS">
+              <ViewAllBtn>
+                View All
+                <ViewAllIcon />
+              </ViewAllBtn>
+            </CustomTooltip>
           </Link>
         </ViewAllContainer>
       )}

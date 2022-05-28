@@ -11,18 +11,22 @@ export const contactsData = {
 
 export const contactsDetailsInfo = [
   {
+    id: "Email",
     title: "janedoe.test@gmail.com",
     component: "a",
     href: `mailto:janedoe.test@gmail.com`,
     icon: <FiAtSign />,
   },
   {
+    id: "Phone",
+
     title: "+915588776600",
     component: "a",
     href: `tel:+915588776600`,
     icon: <FiPhone />,
   },
   {
+    id: "Address",
     title: "Menlo Park, California, United States - 673822",
     component: "div",
     icon: <HiOutlineLocationMarker />,

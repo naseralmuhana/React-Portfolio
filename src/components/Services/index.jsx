@@ -1,4 +1,3 @@
-import React from "react"
 import { servicesData } from "../../data/servicesData"
 // prettier-ignore
 import { Body, CardsContainer, Description, Header, Section, Title } from "./mui"

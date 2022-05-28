@@ -1,4 +1,3 @@
-import React from "react"
 import { Bounce } from "react-awesome-reveal"
 import { FaCode, FaPlay } from "react-icons/fa"
 import placeholder from "../../../assets/png/placeholder.png"
@@ -24,8 +23,8 @@ const ProjectCard = ({ project }) => {
           <ContentImage src={image ? image : placeholder} alt={name} />
           {/* ActionButtons */}
           <ContentActions className="content-actions">
-            <IconBtn href={demo} icon={FaPlay} iconId="demo" name={name} />
-            <IconBtn href={code} icon={FaCode} iconId="code" name={name} />
+            <IconBtn href={demo} icon={FaPlay} iconId="Demo" name={name} />
+            <IconBtn href={code} icon={FaCode} iconId="Code" name={name} />
           </ContentActions>
         </Content>
         {/* onHover Content */}

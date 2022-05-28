@@ -1,27 +1,27 @@
-import { useUIContext } from "../../contexts/UIContext"
 import { HashLink as Link } from "react-router-hash-link"
+import { useUIContext } from "../../contexts/UIContext"
 import { headerData } from "../../data/headerData"
 import { socialsData } from "../../data/socialsData"
+import CustomTooltip from "../UI/CustomTooltip"
 // prettier-ignore
-import { 
-  Section, Body, LeftContainer, RightContainer, Image, LeftContainerContent, SocialIcon, RightContainerContent, Title, Name, Description, Actions, ResumeBtn, ContactBtn
-} from "./mui"
+import { Actions, Body, ContactBtn, Description, Image, LeftContainer, LeftContainerContent, Name, ResumeBtn, RightContainer, RightContainerContent, Section, SocialIcon, Title } from "./mui"
 
 const Landing = () => {
   const { drawerOpen } = useUIContext()
+  const socialIcons = socialsData.map(({ href, icon, label }, index) => (
+    <CustomTooltip title={label}>
+      <a href={href} target="_blank" rel="noreferrer" key={index}>
+        <SocialIcon component={icon} aria-label={label} />
+      </a>
+    </CustomTooltip>
+  ))
   return (
     <Section>
       {/* Body */}
       <Body>
         {/* Left Container */}
         <LeftContainer>
-          <LeftContainerContent>
-            {socialsData.map(({ href, icon, label }, index) => (
-              <a href={href} target="_blank" rel="noreferrer" key={index}>
-                <SocialIcon component={icon} aria-label={label} />
-              </a>
-            ))}
-          </LeftContainerContent>
+          <LeftContainerContent>{socialIcons}</LeftContainerContent>
         </LeftContainer>
         {/* Rounded Image */}
         <Image

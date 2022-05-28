@@ -1,4 +1,4 @@
-import { styled } from "@mui/material"
+import { styled } from "@mui/material/styles"
 import "../../App.css"
 import { HiArrowRight } from "react-icons/hi"
 
@@ -118,11 +118,12 @@ export const ViewAllBtn = styled("button")(({ theme }) => ({
   textTransform: "inherit",
   paddingLeft: "1.5rem",
   color: theme.tertiary,
-  backgroundColor: theme.primary,
-  transition: "color 0.2s",
+  transition: "all 300ms ease-in-out",
+  backgroundColor: theme.primary80,
   "&:hover": {
+    transform: "scale(1.05)",
     color: theme.secondary,
-    backgroundColor: theme.primary,
+    backgroundColor: theme.primary400,
   },
 }))
 

@@ -1,4 +1,4 @@
-import { styled } from "@mui/material"
+import { styled } from "@mui/material/styles"
 import Box from "@mui/material/Box"
 import "../../App.css"
 import { AiOutlineSend, AiOutlineCheckCircle } from "react-icons/ai"
@@ -296,6 +296,7 @@ export const DetailsIconContainer = styled("div")(({ theme }) => ({
   fontSize: "23px",
   transition: "250ms ease-in-out",
   flexShrink: 0,
+  cursor: "pointer",
   "&:hover": {
     transform: "scale(1.1)",
     color: theme.secondary,
