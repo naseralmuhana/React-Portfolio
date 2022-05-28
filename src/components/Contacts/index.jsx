@@ -18,8 +18,8 @@ const Contacts = () => {
   const socialsInfo = socialsContactData.map(({ href, icon, label }) => {
     const Icon = icon
     return (
-      <CustomTooltip title={label}>
-        <SocialIcon key={label} href={href} target="_blank" rel="noreferrer">
+      <CustomTooltip title={label} key={label}>
+        <SocialIcon href={href} target="_blank" rel="noreferrer">
           <Icon aria-label={label} />
         </SocialIcon>
       </CustomTooltip>

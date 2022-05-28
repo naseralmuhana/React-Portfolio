@@ -13,7 +13,7 @@ const Main = () => {
         <title>{headerData.name} - Portfolio</title>
       </Helmet>
 
-      <Navbar />
+      {/* <Navbar />*/}
       <Landing />
       <About />
       <Education />

@@ -1,3 +1,4 @@
+import { Bounce, Fade } from "react-awesome-reveal"
 import { HashLink as Link } from "react-router-hash-link"
 import { useUIContext } from "../../contexts/UIContext"
 import { headerData } from "../../data/headerData"
@@ -9,8 +10,8 @@ import { Actions, Body, ContactBtn, Description, Image, LeftContainer, LeftConta
 const Landing = () => {
   const { drawerOpen } = useUIContext()
   const socialIcons = socialsData.map(({ href, icon, label }, index) => (
-    <CustomTooltip title={label}>
-      <a href={href} target="_blank" rel="noreferrer" key={index}>
+    <CustomTooltip title={label} key={index}>
+      <a href={href} target="_blank" rel="noreferrer">
         <SocialIcon component={icon} aria-label={label} />
       </a>
     </CustomTooltip>
@@ -21,14 +22,20 @@ const Landing = () => {
       <Body>
         {/* Left Container */}
         <LeftContainer>
-          <LeftContainerContent>{socialIcons}</LeftContainerContent>
+          <LeftContainerContent>
+            <Fade direction="right" cascade duration={600}>
+              {socialIcons}
+            </Fade>
+          </LeftContainerContent>
         </LeftContainer>
         {/* Rounded Image */}
+
         <Image
+          draweropen={drawerOpen.toString()}
           src={headerData.image}
           alt=""
-          draweropen={drawerOpen.toString()}
         />
+
         {/* Right Container */}
         <RightContainer>
           <RightContainerContent>
@@ -37,19 +44,22 @@ const Landing = () => {
             <Description>{headerData.description}</Description>
             {/* Actions */}
             <Actions>
-              {headerData.resumePdf && (
-                <a
-                  href={headerData.resumePdf}
-                  download="resume"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <ResumeBtn>Download CV</ResumeBtn>
-                </a>
-              )}
-              <Link to="#contacts" smooth>
-                <ContactBtn>Contact</ContactBtn>
-              </Link>
+              <Bounce cascade delay={200}>
+                {headerData.resumePdf && (
+                  <a
+                    href={headerData.resumePdf}
+                    download="resume"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <ResumeBtn>Download CV</ResumeBtn>
+                  </a>
+                )}
+
+                <Link to="#contacts" smooth>
+                  <ContactBtn>Contact</ContactBtn>
+                </Link>
+              </Bounce>
             </Actions>
           </RightContainerContent>
         </RightContainer>

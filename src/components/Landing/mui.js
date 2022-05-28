@@ -17,7 +17,7 @@ export const Section = styled("section")({
  */
 
 // Landing Body
-export const Body = styled("div")(({ theme }) => ({
+export const Body = styled("div")(({ theme, draweropen }) => ({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
@@ -44,7 +44,7 @@ export const LeftContainer = styled("div")(({ theme }) => ({
   alignItems: "flex-end",
   justifyContent: "flex-start",
   [theme.breakpoints.down(900)]: {
-    flex: "45%",
+    flex: "35%",
   },
   [theme.breakpoints.down(600)]: {
     flex: "initial",
@@ -59,9 +59,13 @@ export const LeftContainerContent = styled("div")(({ theme }) => ({
   width: "100%",
   display: "flex",
   alignItems: "center",
+
   justifyContent: "flex-start",
   [theme.breakpoints.down(1100)]: {
     margin: "2rem",
+  },
+  "& a": {
+    display: "flex",
   },
 }))
 
@@ -88,39 +92,37 @@ export const SocialIcon = styled(Box)(({ theme }) => ({
  */
 
 // Rounded Image
-export const Image = styled("img")(({ theme, draweropen }) => {
-  const opacity = draweropen === "true" ? 0 : 1
-  return {
-    borderColor: theme.secondary,
-    position: "absolute",
-    left: "35%",
-    transform: "translateX(-50%)",
-    width: "400px",
-    height: "400px",
-    objectFit: "cover",
-    borderRadius: "50%",
-    boxShadow: "0px 0px 30px rgba(0, 0, 0, 0.2)",
-    transition: "opacity 0.3s",
-    opacity: opacity,
-    [theme.breakpoints.down(1100)]: {
-      width: "350px",
-      height: "350px",
-    },
-    [theme.breakpoints.down(900)]: {
-      width: "300px",
-      height: "300px",
-      left: "45%",
-    },
-    [theme.breakpoints.down(600)]: {
-      width: "200px",
-      height: "200px",
-      left: "50%",
-      top: "30%",
-      border: `8px solid ${theme.secondary}`,
-      transform: "translate(-50%, -50%)",
-    },
-  }
-})
+export const Image = styled("img")(({ theme, draweropen }) => ({
+  borderColor: theme.secondary,
+  position: "absolute",
+  left: "35%",
+  transform: "translateX(-50%)",
+  width: "400px",
+  height: "400px",
+  objectFit: "cover",
+  borderRadius: "50%",
+  boxShadow: "0px 0px 30px rgba(0, 0, 0, 0.2)",
+  transition: "opacity 0.3s",
+  opacity: draweropen === "true" ? 0 : 1,
+  zIndex: 1,
+  [theme.breakpoints.down(1100)]: {
+    width: "350px",
+    height: "350px",
+  },
+  [theme.breakpoints.down(900)]: {
+    width: "300px",
+    height: "300px",
+    left: "45%",
+  },
+  [theme.breakpoints.down(600)]: {
+    width: "200px",
+    height: "200px",
+    left: "50%",
+    top: "30%",
+    border: `8px solid ${theme.secondary}`,
+    transform: "translate(-50%, -50%)",
+  },
+}))
 
 /**
  * Right Container
