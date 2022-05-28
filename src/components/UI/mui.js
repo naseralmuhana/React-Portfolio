@@ -5,6 +5,7 @@ import "../../App.css"
 export const Section = styled("section")(({ theme }) => ({
   backgroundColor: theme.secondary,
   minHeight: "100vh",
+  overflow: "hidden",
   [theme.breakpoints.down(992)]: {
     minHeight: "100%",
   },

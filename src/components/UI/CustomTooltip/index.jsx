@@ -26,5 +26,8 @@ const CToolTip = styled(({ className, ...props }) => (
     color: theme.tertiary,
     fontFamily: "var(--primaryFont)",
     boxShadow: theme.shadows[1],
+    [theme.breakpoints.down(800)]: {
+      fontSize: "0.775rem",
+    },
   },
 }))
