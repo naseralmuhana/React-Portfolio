@@ -1,5 +1,5 @@
 import { useUIContext } from "../../contexts/UIContext"
-import { NavHashLink as NavLink } from "react-router-hash-link"
+import { HashLink as Link } from "react-router-hash-link"
 import { headerData } from "../../data/headerData"
 import { socialsData } from "../../data/socialsData"
 // prettier-ignore
@@ -47,9 +47,9 @@ const Landing = () => {
                   <ResumeBtn>Download CV</ResumeBtn>
                 </a>
               )}
-              <NavLink to="/#contacts" smooth spy="true" duration={2000}>
+              <Link to="#contacts" smooth>
                 <ContactBtn>Contact</ContactBtn>
-              </NavLink>
+              </Link>
             </Actions>
           </RightContainerContent>
         </RightContainer>

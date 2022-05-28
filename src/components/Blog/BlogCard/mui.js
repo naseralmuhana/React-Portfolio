@@ -48,7 +48,7 @@ export const Card = styled("a")(({ theme }) => ({
 }))
 
 // Image Container &Image Style
-export const ImageContainer = styled("a")(({ theme }) => ({
+export const ImageContainer = styled("div")(({ theme }) => ({
   backgroundColor: theme.secondary,
   height: "50%",
   width: "100%",

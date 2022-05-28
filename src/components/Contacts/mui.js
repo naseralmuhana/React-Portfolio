@@ -154,11 +154,7 @@ export const ButtonContainer = styled("div")(({ theme }) => ({
     backgroundColor: theme.primary,
     color: theme.secondary,
     transition: "250ms ease-in-out",
-    "&:hover": {
-      transform: "scale(1.08)",
-      color: theme.secondary,
-      backgroundColor: theme.tertiary,
-    },
+
     border: "none",
     outline: "none",
     width: "140px",
@@ -169,9 +165,23 @@ export const ButtonContainer = styled("div")(({ theme }) => ({
     alignItems: "center",
     justifyContent: "space-evenly",
     cursor: "pointer",
+    "&:hover": {
+      transform: "scale(1.08)",
+      color: theme.secondary,
+      backgroundColor: theme.tertiary,
+    },
+    "&:disabled": {
+      transform: "scale(1)",
+      backgroundColor: theme.primary,
+      color: theme.secondary,
+      cursor: "default",
+    },
     "& > p": {
       fontSize: "16px",
       fontFamily: "var(--primaryFont)",
+    },
+    "& .progress": {
+      color: theme.secondary,
     },
   },
 }))
@@ -185,7 +195,7 @@ export const ButtonIconContainer = styled("div")(({ theme }) => ({
 }))
 
 // Contacts Button Send Icon
-export const SendIcon = styled(AiOutlineSend)(({ theme, success }) => ({
+export const SendIcon = styled(AiOutlineSend)(({ theme, isloading }) => ({
   "@keyframes fly": {
     "10%": {
       transform: "rotate(0deg)",
@@ -203,14 +213,15 @@ export const SendIcon = styled(AiOutlineSend)(({ theme, success }) => ({
   fontSize: "25px",
   transformOrigin: "center",
   transform: "translate(5px,-3px) rotate(-30deg)",
-  animation: success === "false" ? "initial" : "fly 0.8s linear both",
-  position: success === "true" ? "absolute" : "initial",
+  animation: isloading === "false" ? "initial" : "fly 0.3s linear both",
+  position: isloading === "true" ? "absolute" : "initial",
 }))
+
 // Contacts Button Success Icon
 export const SuccessIcon = styled(AiOutlineCheckCircle)(
-  ({ theme, success }) => ({
-    display: success === "false" ? "none" : "inline-flex",
-    opacity: success === "false" ? "0" : "1",
+  ({ theme, isloading }) => ({
+    display: isloading === "false" ? "none" : "inline-flex",
+    opacity: isloading === "false" ? "0" : "1",
     fontSize: "28px",
     transition: "all 0.3s 0.8s ease-in-out",
   })

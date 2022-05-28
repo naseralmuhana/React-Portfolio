@@ -25,7 +25,6 @@ export const contactsDetailsInfo = [
   {
     title: "Menlo Park, California, United States - 673822",
     component: "div",
-
     icon: <HiOutlineLocationMarker />,
   },
 ]
