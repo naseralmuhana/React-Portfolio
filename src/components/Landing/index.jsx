@@ -5,7 +5,7 @@ import { headerData } from "../../data/headerData"
 import { socialsData } from "../../data/socialsData"
 import CustomTooltip from "../UI/CustomTooltip"
 // prettier-ignore
-import { Actions, Body, ContactBtn, Description, Image, LeftContainer, LeftContainerContent, Name, ResumeBtn, RightContainer, RightContainerContent, Section, SocialIcon, Title } from "./mui"
+import { Actions, Blob, Body, ContactBtn, Description, LeftContainer, LeftContainerContent, Name, ResumeBtn, RightContainer, RightContainerContent, Section, SocialIcon, Title } from "./mui"
 
 const Landing = () => {
   const { drawerOpen } = useUIContext()
@@ -28,14 +28,8 @@ const Landing = () => {
             </Fade>
           </LeftContainerContent>
         </LeftContainer>
-        {/* Rounded Image */}
-
-        <Image
-          draweropen={drawerOpen.toString()}
-          src={headerData.image}
-          alt=""
-        />
-
+        {/* Rounded Animated Image */}
+        <Blob src={headerData.image} draweropen={drawerOpen.toString()} />
         {/* Right Container */}
         <RightContainer>
           <RightContainerContent>

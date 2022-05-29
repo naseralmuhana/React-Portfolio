@@ -92,15 +92,29 @@ export const SocialIcon = styled(Box)(({ theme }) => ({
  */
 
 // Rounded Image
-export const Image = styled("img")(({ theme, draweropen }) => ({
-  borderColor: theme.secondary,
+export const Blob = styled("div")(({ theme, src, draweropen }) => ({
+  "@keyframes morph": {
+    "0%, 100%": {
+      borderRadius: "42% 56% 72% 28% / 42% 42% 56% 48%",
+    },
+    "33%": {
+      borderRadius: "72% 28% 48% 48% / 28% 28% 72% 72%",
+    },
+    "66%": {
+      borderRadius: "100% 56% 56% 100% / 100% 100% 56% 56%",
+    },
+  },
   position: "absolute",
   left: "35%",
   transform: "translateX(-50%)",
+
   width: "400px",
   height: "400px",
-  objectFit: "cover",
-  borderRadius: "50%",
+  borderRadius: "42% 56% 72% 28% / 42% 42% 56% 48%",
+  animation: "morph 3.75s linear infinite",
+  background: `url(${src})`,
+  backgroundSize: "cover",
+  backgroundPosition: "center",
   boxShadow: "0px 0px 30px rgba(0, 0, 0, 0.2)",
   transition: "opacity 0.3s",
   opacity: draweropen === "true" ? 0 : 1,
@@ -119,7 +133,7 @@ export const Image = styled("img")(({ theme, draweropen }) => ({
     height: "200px",
     left: "50%",
     top: "30%",
-    border: `8px solid ${theme.secondary}`,
+    // border: `8px solid ${theme.secondary}`,
     transform: "translate(-50%, -50%)",
   },
 }))
