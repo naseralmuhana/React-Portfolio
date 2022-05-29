@@ -17,7 +17,7 @@ const Landing = () => {
     </CustomTooltip>
   ))
   return (
-    <Section>
+    <Section id="landing">
       {/* Body */}
       <Body>
         {/* Left Container */}

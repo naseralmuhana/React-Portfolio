@@ -10,7 +10,7 @@ const Achievement = () => {
     <AchievementCard key={achieve.id} achieve={achieve} />
   ))
   return (
-    <Section id="achievement">
+    <Section id="achievements">
       {/* Body */}
       <Body>
         <Title>Achievements</Title>

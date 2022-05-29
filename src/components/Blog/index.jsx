@@ -12,7 +12,7 @@ const Blog = () => {
     .reverse()
     .map((blog) => <BlogCard key={blog.id} blog={blog} />)
   return (
-    <Section id="blog">
+    <Section id="blogs">
       <Header>
         <Title>Blogs</Title>
       </Header>
