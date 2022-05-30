@@ -2,6 +2,7 @@ import { useMediaQuery } from "@mui/material"
 import { useTheme } from "@mui/system"
 import { Link } from "react-router-dom"
 import CircularMenu from "../CircularMenu"
+import ColorSwitcher from "../ColorSwitcher"
 import LogoAnimation from "./LogoAnimation"
 import LogoSmAnimation from "./LogoSmAnimation"
 import { NavbarContainerStack, NavbarStack } from "./mui"
@@ -23,6 +24,8 @@ const Navbar = () => {
         </Link>
         {/* Circular menu */}
         <CircularMenu />
+        {/* ColorSwitcher */}
+        <ColorSwitcher />
       </NavbarContainerStack>
     </NavbarStack>
   )

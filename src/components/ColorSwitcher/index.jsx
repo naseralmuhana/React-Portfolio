@@ -1,11 +1,11 @@
+import IconButton from "@mui/material/IconButton"
 import { styled } from "@mui/system"
 import { useState } from "react"
-import { circularMenuData } from "../../data/circularMenuData"
+import { FiSettings } from "react-icons/fi"
 import CircularPlanet from "../UI/CircularPlanet"
-import CircularItem from "../UI/CircularPlanet/CircularItem"
-import { RiMenuUnfoldLine } from "react-icons/ri"
+import CustomTooltip from "../UI/CustomTooltip"
 
-const CircularMenu = () => {
+const ColorSwitcher = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   const handleCloseMenu = () => setIsOpen(false)
@@ -17,22 +17,22 @@ const CircularMenu = () => {
         onClick={handleClickMenu}
         onClose={handleCloseMenu}
         open={isOpen}
-        icon={RiMenuUnfoldLine}
-        title={`Menu`}
+        icon={FiSettings}
+        title="Color Switcher"
+        toolTipPlacement="bottom"
+        orbitRadius={120}
+        rotation={332}
       >
-        {circularMenuData.map(({ id, label, icon, placement, to }) => (
-          <CircularItem
-            key={id}
-            id={id}
-            label={label}
-            icon={icon}
-            placement={placement}
-            to={to}
-            onClick={handleCloseMenu}
-          />
+        {[...Array(8).keys()].map((index) => (
+          <CustomTooltip key={index} title="red" placement="left">
+            <IconButton className="iconButton" onClick={handleCloseMenu}>
+              {/* <SettingsIcon className="icon" /> */}
+              <span />
+            </IconButton>
+          </CustomTooltip>
         ))}
-        {/*  9 Divs */}
-        {[...Array(23).keys()].map((index) => (
+
+        {[...Array(8).keys()].map((index) => (
           <div key={index} />
         ))}
       </CircularPlanet>
@@ -40,11 +40,11 @@ const CircularMenu = () => {
   )
 }
 
-export default CircularMenu
+export default ColorSwitcher
 
 export const Container = styled("div")(({ theme }) => ({
   position: "fixed",
-  top: "35px",
+  top: "100px",
   right: "80px",
   zIndex: "1000",
   transition: "transform 0.25s linear",
@@ -60,13 +60,21 @@ export const Container = styled("div")(({ theme }) => ({
       backgroundColor: theme.primary,
       color: theme.tertiary,
     },
+    "& span": {
+      width: "1.5rem",
+      height: "1.5rem",
+    },
+  },
+  "@keyframes rotate": {
+    "100%": {
+      transform: "rotate(360deg)",
+    },
   },
   "& .main-btn": {
-    transform: "rotate(0deg)",
-    transition: "all 0.6s ease",
+    animation: "rotate 2s linear infinite",
   },
   "& .open": {
-    transform: "rotate(-225deg)",
+    animation: "rotate 1s linear infinite",
     backgroundColor: theme.primary,
     color: theme.tertiary,
   },

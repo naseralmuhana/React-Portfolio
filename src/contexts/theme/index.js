@@ -1,10 +1,12 @@
 import { createTheme, ThemeProvider } from "@mui/material"
 import React, { useContext, useMemo, useState } from "react"
-import { themeData } from "../data/themeData"
+import { themeData } from "../../data/themeData"
+import { retrieveStoredTheme, savetoLocalStorage } from "./helper"
 
 export const ThemeContext = React.createContext()
 
 const ThemeContextProvider = ({ children }) => {
+  const initialThemeMode = retrieveStoredTheme()
   const [themeMode, setThemeMode] = useState(themeData.theme)
 
   const theme = useMemo(() => createTheme(themeMode), [themeMode])
