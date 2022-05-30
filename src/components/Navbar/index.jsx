@@ -1,21 +1,24 @@
 // import { useState } from "react"
 // import { useUIContext } from "../../contexts/UIContext"
-import { headerData } from "../../data/headerData"
+
+import { useTheme } from "@mui/system"
 import CircularMenu from "../CircularMenu"
 
 // prettier-ignore
-import {  NavbarContainerStack, NavbarLogo,  NavbarStack,  } from "./mui"
-
-// Import the circular menu
+import {  NavbarContainerStack,  NavbarStack,  } from "./mui"
 
 const Navbar = () => {
+  const theme = useTheme()
   return (
     <NavbarStack>
       <NavbarContainerStack>
-        <NavbarLogo>{headerData.name}</NavbarLogo>
+        {/* Logo */}
+
+        <div style={{}}>
+          <img src={theme.logonr} alt="" />
+        </div>
         {/* Circular menu */}
         <CircularMenu />
-        {/* <NavbarMenuIcon onClick={handleDrawerOpen} aria-label="Menu" /> */}
       </NavbarContainerStack>
     </NavbarStack>
   )

@@ -42,11 +42,16 @@ import contactsPurple from "../assets/svg/contacts/contactsPurple.svg"
 import contactsRed from "../assets/svg/contacts/contactsRed.svg"
 import contactsYellow from "../assets/svg/contacts/contactsYellow.svg"
 
+import logoNormalDark from "../assets/svg/logo/normal-dark.svg"
+import logoNormalLight from "../assets/svg/logo/normal-light.svg"
+import logoSmallDark from "../assets/svg/logo/small-dark.svg"
+import logoSmallLight from "../assets/svg/logo/small-light.svg"
+
 // prettier-ignore
 export { 
     blueThemegirl, blueThemeboy, bwThemeboy, bwThemegirl, greenThemeboy, greenThemegirl, orangeThemeboy, 
     orangeThemegirl, pinkThemeboy, pinkThemegirl, purpleThemeboy, purpleThemegirl, redThemeboy, redThemegirl,
     yellowThemeboy,yellowThemegirl,eduBlue,eduBlack,eduGreen,eduOrange,eduPink,eduPurple,eduRed,eduYellow,
     expBlue,expBlack,expGreen,expOrange,expPink,expPurple,expRed,expYellow,contactsBlue,contactsBlack,
-    contactsGreen,contactsOrange,contactsPink,contactsPurple,contactsRed,contactsYellow
+    contactsGreen,contactsOrange,contactsPink,contactsPurple,contactsRed,contactsYellow,logoNormalDark,logoNormalLight,logoSmallDark,logoSmallLight
 }
