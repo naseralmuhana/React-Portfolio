@@ -4,9 +4,11 @@ import { useEffect, useState } from "react"
 import { circularMenuData } from "../../data/circularMenuData"
 import CircularPlanet from "./CircularPlanet"
 import CircularItem from "./CircularItem"
+import { useMediaQuery } from "@mui/material"
 
 const CircularMenu = () => {
-  const isVisible = useVisibility()
+  const matches = useMediaQuery("(max-width:600px)")
+  const isVisible = useVisibility(matches)
   const [isOpen, setIsOpen] = useState(false)
 
   const handleCloseMenu = () => setIsOpen(false)

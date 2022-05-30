@@ -1,6 +1,5 @@
 import { Bounce, Fade } from "react-awesome-reveal"
 import { HashLink as Link } from "react-router-hash-link"
-import { useUIContext } from "../../contexts/UIContext"
 import { headerData } from "../../data/headerData"
 import { socialsData } from "../../data/socialsData"
 import CustomTooltip from "../UI/CustomTooltip"
@@ -8,7 +7,6 @@ import CustomTooltip from "../UI/CustomTooltip"
 import { Actions, Blob, Body, ContactBtn, Description, LeftContainer, LeftContainerContent, Name, ResumeBtn, RightContainer, RightContainerContent, Section, SocialIcon, Title } from "./mui"
 
 const Landing = () => {
-  const { drawerOpen } = useUIContext()
   const socialIcons = socialsData.map(({ href, icon, label }, index) => (
     <CustomTooltip title={label} key={index}>
       <a href={href} target="_blank" rel="noreferrer">
@@ -28,8 +26,10 @@ const Landing = () => {
             </Fade>
           </LeftContainerContent>
         </LeftContainer>
+
         {/* Rounded Animated Image */}
-        <Blob src={headerData.image} draweropen={drawerOpen.toString()} />
+        <Blob src={headerData.image} />
+
         {/* Right Container */}
         <RightContainer>
           <RightContainerContent>

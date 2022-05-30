@@ -1,7 +1,18 @@
 import { useEffect, useState } from "react"
 
-const useVisibility = () => {
+const useVisibility = (matches = false) => {
   const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    if (matches) {
+      setIsVisible(true)
+      return
+    }
+    document.addEventListener("scroll", handleVisibilityChange)
+    return () => {
+      document.removeEventListener("scroll", handleVisibilityChange)
+    }
+  }, [matches])
 
   const handleVisibilityChange = () => {
     const scrolled = document.documentElement.scrollTop
@@ -11,14 +22,6 @@ const useVisibility = () => {
       setIsVisible(false)
     }
   }
-
-  useEffect(() => {
-    document.addEventListener("scroll", handleVisibilityChange)
-    return () => {
-      document.removeEventListener("scroll", handleVisibilityChange)
-    }
-  }, [])
-
   return isVisible
 }
 

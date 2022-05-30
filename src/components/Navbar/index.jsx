@@ -1,22 +1,26 @@
-// import { useState } from "react"
-// import { useUIContext } from "../../contexts/UIContext"
-
+import { useMediaQuery } from "@mui/material"
 import { useTheme } from "@mui/system"
+import { Link } from "react-router-dom"
 import CircularMenu from "../CircularMenu"
-
-// prettier-ignore
-import {  NavbarContainerStack,  NavbarStack,  } from "./mui"
+import LogoAnimation from "./LogoAnimation"
+import LogoSmAnimation from "./LogoSmAnimation"
+import { NavbarContainerStack, NavbarStack } from "./mui"
 
 const Navbar = () => {
   const theme = useTheme()
+  const matches = useMediaQuery(theme.breakpoints.up(800))
+
   return (
     <NavbarStack>
       <NavbarContainerStack>
         {/* Logo */}
-
-        <div style={{}}>
-          <img src={theme.logonr} alt="" />
-        </div>
+        <Link to="/">
+          {matches ? (
+            <LogoAnimation stroke={theme.secondary} />
+          ) : (
+            <LogoSmAnimation stroke={theme.secondary} />
+          )}
+        </Link>
         {/* Circular menu */}
         <CircularMenu />
       </NavbarContainerStack>

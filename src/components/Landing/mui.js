@@ -17,7 +17,7 @@ export const Section = styled("section")({
  */
 
 // Landing Body
-export const Body = styled("div")(({ theme, draweropen }) => ({
+export const Body = styled("div")(({ theme }) => ({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
@@ -44,6 +44,9 @@ export const LeftContainer = styled("div")(({ theme }) => ({
   alignItems: "flex-end",
   justifyContent: "flex-start",
   [theme.breakpoints.down(900)]: {
+    flex: "45%",
+  },
+  [theme.breakpoints.down(700)]: {
     flex: "35%",
   },
   [theme.breakpoints.down(600)]: {
@@ -62,7 +65,8 @@ export const LeftContainerContent = styled("div")(({ theme }) => ({
 
   justifyContent: "flex-start",
   [theme.breakpoints.down(1100)]: {
-    margin: "2rem",
+    margin: "2rem 0.5rem",
+    justifyContent: "center",
   },
   "& a": {
     display: "flex",
@@ -92,7 +96,7 @@ export const SocialIcon = styled(Box)(({ theme }) => ({
  */
 
 // Rounded Image
-export const Blob = styled("div")(({ theme, src, draweropen }) => ({
+export const Blob = styled("div")(({ theme, src }) => ({
   "@keyframes morph": {
     "0%, 100%": {
       borderRadius: "42% 56% 72% 28% / 42% 42% 56% 48%",
@@ -105,7 +109,7 @@ export const Blob = styled("div")(({ theme, src, draweropen }) => ({
     },
   },
   position: "absolute",
-  left: "35%",
+  left: "calc(100% - 65%)",
   transform: "translateX(-50%)",
 
   width: "400px",
@@ -117,7 +121,7 @@ export const Blob = styled("div")(({ theme, src, draweropen }) => ({
   backgroundPosition: "center",
   boxShadow: "0px 0px 30px rgba(0, 0, 0, 0.2)",
   transition: "opacity 0.3s",
-  opacity: draweropen === "true" ? 0 : 1,
+  opacity: 1,
   zIndex: 1,
   [theme.breakpoints.down(1100)]: {
     width: "350px",
@@ -126,12 +130,14 @@ export const Blob = styled("div")(({ theme, src, draweropen }) => ({
   [theme.breakpoints.down(900)]: {
     width: "300px",
     height: "300px",
-    left: "45%",
+    left: "calc(100% - 75%)",
+    // left: "45%",
   },
   [theme.breakpoints.down(600)]: {
     width: "200px",
     height: "200px",
     left: "50%",
+    // left: "50%",
     top: "30%",
     // border: `8px solid ${theme.secondary}`,
     transform: "translate(-50%, -50%)",
@@ -155,6 +161,9 @@ export const RightContainer = styled("div")(({ theme }) => ({
   [theme.breakpoints.down(900)]: {
     flex: "55%",
   },
+  [theme.breakpoints.down(700)]: {
+    flex: "45%",
+  },
   [theme.breakpoints.down(600)]: {
     flex: "initial",
     width: "100%",
@@ -171,7 +180,7 @@ export const RightContainerContent = styled("div")(({ theme }) => ({
   width: "45%",
   fontFamily: "var(--primaryFont)",
   [theme.breakpoints.down(900)]: {
-    width: "60%",
+    width: "85%",
     marginTop: "10%",
     marginRight: "6%",
   },
@@ -184,7 +193,7 @@ export const RightContainerContent = styled("div")(({ theme }) => ({
     marginTop: "35%",
   },
   [theme.breakpoints.down(370)]: {
-    marginTop: "35%",
+    marginTop: "55%",
   },
 }))
 
@@ -201,6 +210,9 @@ export const Title = styled("h6")(({ theme }) => ({
     fontSize: "1rem",
     textAlign: "center",
   },
+  [theme.breakpoints.down(320)]: {
+    fontSize: "1rem",
+  },
 }))
 
 // Name
@@ -215,6 +227,9 @@ export const Name = styled("h1")(({ theme }) => ({
   [theme.breakpoints.down(600)]: {
     fontSize: "2.5rem",
     textAlign: "center",
+  },
+  [theme.breakpoints.down(320)]: {
+    fontSize: "1.75rem",
   },
 }))
 
@@ -234,6 +249,9 @@ export const Description = styled("p")(({ theme }) => ({
     fontSize: "0.95rem",
     margin: "0 auto",
     textAlign: "center",
+  },
+  [theme.breakpoints.down(320)]: {
+    fontSize: "0.85rem",
   },
 }))
 
