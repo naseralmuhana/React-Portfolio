@@ -1,7 +1,7 @@
 import { Planet } from "react-planet"
 import CustomTooltip from "../UI/CustomTooltip"
 import IconButton from "@mui/material/IconButton"
-import { AiOutlinePlus } from "react-icons/ai"
+import { RiMenuUnfoldLine } from "react-icons/ri"
 
 const CircularPlanet = ({ children, onClick, onClose, open }) => {
   const className = open ? "iconButton main-btn open" : "iconButton main-btn"
@@ -10,15 +10,15 @@ const CircularPlanet = ({ children, onClick, onClose, open }) => {
       centerContent={
         <CustomTooltip title="Menu">
           <IconButton className={className}>
-            <AiOutlinePlus className="icon" />
+            <RiMenuUnfoldLine className="icon" />
           </IconButton>
         </CustomTooltip>
       }
       hideOrbit
       autoClose
-      orbitRadius={140}
+      orbitRadius={230}
       bounce
-      rotation={-9}
+      rotation={-14}
       dragablePlanet
       dragRadiusPlanet={100}
       mass={4}
