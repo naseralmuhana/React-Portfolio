@@ -1,13 +1,22 @@
-export const retrieveStoredTheme = () => {
-  // retrieve the storedThemeMode, if not found return light as default
-  const storedTheme = localStorage.getItem("theme")
-    ? JSON.parse(localStorage.getItem("theme"))
+export const retrieveStoredThemeData = () => {
+  // retrieve the storedThemeType, if not found return light as default
+  const storedThemeType = localStorage.getItem("themeType")
+    ? JSON.parse(localStorage.getItem("themeType"))
     : "light"
 
-  return storedTheme
+  // retrieve the storedThemeColor, if not found return orange as default
+  const storedThemeColor = localStorage.getItem("themeColor")
+    ? JSON.parse(localStorage.getItem("themeColor"))
+    : "blue"
+
+  return {
+    initialThemeType: storedThemeType,
+    initialThemeColor: storedThemeColor,
+  }
 }
 
-export const savetoLocalStorage = (themeMode) => {
-  // store theme Mode into LocalStorage
-  localStorage.setItem("theme", JSON.stringify(themeMode))
+export const savetoLocalStorage = (themeType, themeColor) => {
+  // store themeType & themeColor in LocalStorage
+  localStorage.setItem("themeType", JSON.stringify(themeType))
+  localStorage.setItem("themeColor", JSON.stringify(themeColor))
 }

@@ -1,19 +1,51 @@
 import { createTheme, ThemeProvider } from "@mui/material"
 import React, { useContext, useMemo, useState } from "react"
 import { themeData } from "../../data/themeData"
-import { retrieveStoredTheme, savetoLocalStorage } from "./helper"
+// prettier-ignore
+import {  retrieveStoredThemeData, savetoLocalStorage } from "./helper"
 
 export const ThemeContext = React.createContext()
 
 const ThemeContextProvider = ({ children }) => {
-  const initialThemeMode = retrieveStoredTheme()
-  const [themeMode, setThemeMode] = useState(themeData.theme)
+  // Get the type & color from localStorage
+  const { initialThemeType, initialThemeColor } = retrieveStoredThemeData()
+  const [themeType, setThemeType] = useState(initialThemeType) // light
+  const [themeColor, setThemeColor] = useState(initialThemeColor) // blue
 
-  const theme = useMemo(() => createTheme(themeMode), [themeMode])
+  const selectedThemeColor = themeData.filter(
+    (theme) => theme.label === themeColor
+  )[0]
 
-  const value = { themeMode }
+  const themeMode =
+    themeType === "dark"
+      ? selectedThemeColor.darkTheme
+      : selectedThemeColor.lightTheme
+
+  // const [themeMode, setThemeMode] = useState(selectedThemeMode) // {type:'light', primary:'blue'}
+  const colorMode = useMemo(
+    () => ({
+      toggleThemeType: () => {
+        setThemeType((prevMode) => (prevMode === "light" ? "dark" : "light"))
+      },
+      changeThemeColor: (color) => {
+        setThemeColor(color)
+      },
+      themeMode,
+      themeColor,
+      themeType,
+    }),
+    [themeMode, themeType, themeColor]
+  )
+
+  // Save theme in localStorage and set it as default
+  const theme = useMemo(() => {
+    savetoLocalStorage(themeType, themeColor)
+    return createTheme(themeMode)
+  }, [themeType, themeColor, themeMode])
+
+  // const value = { themeMode }
   return (
-    <ThemeContext.Provider value={value}>
+    <ThemeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>{children}</ThemeProvider>
     </ThemeContext.Provider>
   )

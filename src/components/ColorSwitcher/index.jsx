@@ -1,9 +1,13 @@
 import IconButton from "@mui/material/IconButton"
+
 import { styled } from "@mui/system"
 import { useState } from "react"
 import { FiSettings } from "react-icons/fi"
+import { themeDataUi } from "../../data/themeData"
 import CircularPlanet from "../UI/CircularPlanet"
-import CustomTooltip from "../UI/CustomTooltip"
+
+import TypeSwitcherButton from "./TypeSwitcherButton"
+import ColorSwitcherButton from "./ColorSwitcherButton"
 
 const ColorSwitcher = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -23,16 +27,20 @@ const ColorSwitcher = () => {
         orbitRadius={120}
         rotation={332}
       >
-        {[...Array(8).keys()].map((index) => (
-          <CustomTooltip key={index} title="red" placement="left">
-            <IconButton className="iconButton" onClick={handleCloseMenu}>
-              {/* <SettingsIcon className="icon" /> */}
-              <span />
-            </IconButton>
-          </CustomTooltip>
+        {/* FirstHalf */}
+        {themeDataUi.slice(0, 4).map(({ col, label }, i) => (
+          <ColorSwitcherButton key={i} col={col} label={label} />
         ))}
 
-        {[...Array(8).keys()].map((index) => (
+        {/* Dark / light */}
+        <TypeSwitcherButton />
+
+        {/* SecondHalf */}
+        {themeDataUi.slice(4, 8).map(({ col, label }, i) => (
+          <ColorSwitcherButton key={i + 4} col={col} label={label} />
+        ))}
+
+        {[...Array(9).keys()].map((index) => (
           <div key={index} />
         ))}
       </CircularPlanet>
@@ -60,10 +68,6 @@ export const Container = styled("div")(({ theme }) => ({
       backgroundColor: theme.primary,
       color: theme.tertiary,
     },
-    "& span": {
-      width: "1.5rem",
-      height: "1.5rem",
-    },
   },
   "@keyframes rotate": {
     "100%": {
@@ -77,5 +81,22 @@ export const Container = styled("div")(({ theme }) => ({
     animation: "rotate 1s linear infinite",
     backgroundColor: theme.primary,
     color: theme.tertiary,
+  },
+}))
+
+export const IconButtonColor = styled(IconButton)(({ theme, col }) => ({
+  backgroundColor: col,
+  color: theme.secondary,
+  width: "40px",
+  height: "40px",
+  transition: "all 0.20s linear",
+  "&:hover": {
+    transform: "scale(1.1)",
+    backgroundColor: col,
+  },
+  "&.whiteBlack": {
+    color: theme.tertiary,
+    background: "linear-gradient(45deg, #EAEAEA 50%,#000000 50%)",
+    border: "1px solid #000000",
   },
 }))
