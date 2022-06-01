@@ -6,7 +6,7 @@ import { Main } from "./pages"
 const App = () => {
   return (
     <div className="app">
-      <ColorSwitcher />
+      {/* <ColorSwitcher /> */}
       <Routes>
         <Route path="/" element={<Main />} />
       </Routes>

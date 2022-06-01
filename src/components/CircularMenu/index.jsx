@@ -4,6 +4,7 @@ import { useState } from "react"
 import { circularMenuData } from "../../data/circularMenuData"
 import MenuItem from "./MenuItem"
 import CustomTooltip from "../UI/CustomTooltip"
+import CustomMenu from "../UI/CustomMenu"
 
 const CircularMenu = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -12,20 +13,26 @@ const CircularMenu = () => {
   const handleClickMenu = () => setIsOpen(!isOpen)
 
   return (
-    <Container className={isOpen ? "open" : undefined}>
+    <Container>
       <CustomTooltip title="Menu" placement="left">
-        <MenuIcon onClick={handleClickMenu}>
+        <MenuIcon
+          className={isOpen ? "open" : undefined}
+          onClick={handleClickMenu}
+        >
           <Icon className="icon" />
         </MenuIcon>
       </CustomTooltip>
-      {circularMenuData.map((item) => (
-        <MenuItem
-          key={item.id}
-          item={item}
-          isOpen={isOpen}
-          onClose={handleCloseMenu}
-        />
-      ))}
+
+      <CustomMenu onClose={handleCloseMenu} show={isOpen}>
+        {circularMenuData.map((item) => (
+          <MenuItem
+            key={item.id}
+            item={item}
+            isOpen={isOpen}
+            onClose={handleCloseMenu}
+          />
+        ))}
+      </CustomMenu>
     </Container>
   )
 }
@@ -36,16 +43,29 @@ const Container = styled("div")(({ theme }) => ({
   position: "fixed",
   top: "40px",
   right: "40px",
-  zIndex: "1000",
+
   [theme.breakpoints.down(800)]: {
     right: "10px",
   },
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
+}))
+
+const MenuIcon = styled(IconButton)(({ theme }) => ({
+  zIndex: "2000",
+  position: "relative",
+  width: "2.6rem",
+  height: "2.6rem",
+  backgroundColor: theme.tertiary,
+  color: theme.secondary,
+  transition: "transform 0.5s",
+  "&:hover": {
+    backgroundColor: theme.primary,
+    color: theme.tertiary,
+  },
   "&.open": {
-    // Main Icon
-    "& .icon": {
+    ".icon": {
       transform: "rotate(-90deg)",
       "&::before": {
         transform: "rotateZ(-45deg) scaleX(0.65) translate(-9px, -3px)",
@@ -54,20 +74,6 @@ const Container = styled("div")(({ theme }) => ({
         transform: "rotateZ(45deg) scaleX(0.65) translate(-9px, 3px)",
       },
     },
-  },
-}))
-
-const MenuIcon = styled(IconButton)(({ theme }) => ({
-  zIndex: "1000",
-  position: "relative",
-  width: "2.6rem",
-  height: "2.6rem",
-  backgroundColor: theme.tertiary,
-  color: theme.secondary,
-  transitionDuration: "0.5s",
-  "&:hover": {
-    backgroundColor: theme.primary,
-    color: theme.tertiary,
   },
 }))
 

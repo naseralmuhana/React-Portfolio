@@ -25,6 +25,7 @@ const MenuItem = ({ item, isOpen, onClose }) => {
 export default MenuItem
 
 const Item = styled(IconButton)(({ theme, index }) => ({
+  zIndex: "1500",
   backgroundColor: theme.tertiary,
   color: theme.secondary,
   transition: `transform 0.5s calc(0.05s * ${index}),
