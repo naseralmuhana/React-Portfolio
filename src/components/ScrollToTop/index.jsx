@@ -4,15 +4,17 @@ import { styled } from "@mui/system"
 import { IoIosArrowUp } from "react-icons/io"
 import CustomTooltip from "../UI/CustomTooltip"
 import { useVisibility } from "../../hooks"
+import { animateScroll as scroll } from "react-scroll"
 
 const ScrollToTop = () => {
   const isVisible = useVisibility()
 
   const handleScroll = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    })
+    scroll.scrollToTop()
+    // window.scrollTo({
+    //   top: 0,
+    //   behavior: "smooth",
+    // })
   }
 
   return (

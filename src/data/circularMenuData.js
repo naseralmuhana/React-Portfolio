@@ -13,76 +13,76 @@ export const circularMenuData = [
     label: "Home",
     icon: AiOutlineHome,
 
-    to: "#landing",
+    to: "landing",
   },
   {
     id: 2,
     label: "About Me",
     icon: AiOutlineExclamation,
 
-    to: "#about",
+    to: "about",
   },
   {
     id: 3,
     label: "Eduction",
     icon: IoSchoolOutline,
 
-    to: "#education",
+    to: "education",
   },
   {
     id: 4,
     label: "Skills",
     icon: GiSkills,
 
-    to: "#skills",
+    to: "skills",
   },
   {
     id: 5,
     label: "Experience",
     icon: MdWorkOutline,
 
-    to: "#experience",
+    to: "experience",
   },
   {
     id: 6,
     label: "Projects",
     icon: AccountTreeOutlinedIcon,
 
-    to: "#projects",
+    to: "projects",
   },
   {
     id: 7,
     label: "Achievement",
     icon: GiAchievement,
 
-    to: "#achievements",
+    to: "achievements",
   },
   {
     id: 8,
     label: "Services",
     icon: MdOutlineMiscellaneousServices,
 
-    to: "#services",
+    to: "services",
   },
   {
     id: 9,
     label: "Testimonials",
     icon: MdOutlineFormatQuote,
 
-    to: "#testimonials",
+    to: "testimonials",
   },
   {
     id: 10,
     label: "Blogs",
     icon: FaBloggerB,
 
-    to: "#blogs",
+    to: "blogs",
   },
   {
     id: 11,
     label: "Contacts",
     icon: TiContacts,
 
-    to: "#contacts",
+    to: "contacts",
   },
 ]

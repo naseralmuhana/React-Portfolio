@@ -1,5 +1,5 @@
 import { Bounce, Fade } from "react-awesome-reveal"
-import { HashLink as Link } from "react-router-hash-link"
+import { Link } from "react-scroll"
 import { headerData } from "../../data/headerData"
 import { socialsData } from "../../data/socialsData"
 import CustomTooltip from "../UI/CustomTooltip"
@@ -50,7 +50,7 @@ const Landing = () => {
                   </a>
                 )}
 
-                <Link to="#contacts" smooth>
+                <Link to="contacts" spy smooth isDynamic duration={2000}>
                   <ContactBtn>Contact</ContactBtn>
                 </Link>
               </Bounce>

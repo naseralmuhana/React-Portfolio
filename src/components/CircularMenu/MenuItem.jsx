@@ -1,6 +1,7 @@
 import { styled } from "@mui/system"
 import IconButton from "@mui/material/IconButton"
-import { HashLink as Link } from "react-router-hash-link"
+import { Link } from "react-scroll"
+
 import CustomTooltip from "../UI/CustomTooltip"
 
 const MenuItem = ({ item, isOpen, onClose }) => {
@@ -9,19 +10,18 @@ const MenuItem = ({ item, isOpen, onClose }) => {
 
   return (
     <Link
-      key={id}
       to={to}
-      // smooth
-      scroll={(el) =>
-        el.scrollIntoView({ behavior: "smooth", block: "center" })
-      }
+      smooth
+      spy
+      // isDynamic
+      duration={1200}
       style={{ position: "absolute" }}
     >
       <CustomTooltip title={label} placement="left">
         <Item
           index={id}
           // onClick={onClose}
-          className={isOpen ? "open" : undefined}
+          className={isOpen ? "open iconButton" : "iconButton"}
         >
           <ItemIcon />
         </Item>

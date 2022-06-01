@@ -50,6 +50,11 @@ const Container = styled("div")(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
+
+  "& a.active .iconButton": {
+    backgroundColor: theme.primary,
+    color: theme.tertiary,
+  },
 }))
 
 const MenuIcon = styled(IconButton)(({ theme }) => ({
