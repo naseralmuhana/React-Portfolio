@@ -1,9 +1,9 @@
 import { styled } from "@mui/system"
+import IconButton from "@mui/material/IconButton"
 import { useState } from "react"
 import { circularMenuData } from "../../data/circularMenuData"
-import CircularPlanet from "../UI/CircularPlanet"
-import CircularItem from "../UI/CircularPlanet/CircularItem"
-import { RiMenuUnfoldLine } from "react-icons/ri"
+import MenuItem from "./MenuItem"
+import CustomTooltip from "../UI/CustomTooltip"
 
 const CircularMenu = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -12,62 +12,88 @@ const CircularMenu = () => {
   const handleClickMenu = () => setIsOpen(!isOpen)
 
   return (
-    <Container>
-      <CircularPlanet
-        onClick={handleClickMenu}
-        onClose={handleCloseMenu}
-        open={isOpen}
-        icon={RiMenuUnfoldLine}
-        title={`Menu`}
-      >
-        {circularMenuData.map(({ id, label, icon, placement, to }) => (
-          <CircularItem
-            key={id}
-            id={id}
-            label={label}
-            icon={icon}
-            placement={placement}
-            to={to}
-            onClick={handleCloseMenu}
-          />
-        ))}
-        {/*  9 Divs */}
-        {[...Array(23).keys()].map((index) => (
-          <div key={index} />
-        ))}
-      </CircularPlanet>
+    <Container className={isOpen ? "open" : undefined}>
+      <CustomTooltip title="Menu" placement="left">
+        <MenuIcon onClick={handleClickMenu}>
+          <Icon className="icon" />
+        </MenuIcon>
+      </CustomTooltip>
+      {circularMenuData.map((item) => (
+        <MenuItem
+          key={item.id}
+          item={item}
+          isOpen={isOpen}
+          onClose={handleCloseMenu}
+        />
+      ))}
     </Container>
   )
 }
 
 export default CircularMenu
 
-export const Container = styled("div")(({ theme }) => ({
+const Container = styled("div")(({ theme }) => ({
   position: "fixed",
-  top: "35px",
-  right: "80px",
+  top: "40px",
+  right: "40px",
   zIndex: "1000",
-  transition: "transform 0.25s linear",
-  transform: "translateX(0)",
   [theme.breakpoints.down(800)]: {
-    right: "77px",
+    right: "10px",
   },
-  "& .iconButton": {
-    backgroundColor: theme.tertiary,
-    color: theme.secondary,
-    transition: "all 0.20s linear",
-    "&:hover": {
-      backgroundColor: theme.primary,
-      color: theme.tertiary,
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  "&.open": {
+    // Main Icon
+    "& .icon": {
+      transform: "rotate(-90deg)",
+      "&::before": {
+        transform: "rotateZ(-45deg) scaleX(0.65) translate(-9px, -3px)",
+      },
+      "&::after": {
+        transform: "rotateZ(45deg) scaleX(0.65) translate(-9px, 3px)",
+      },
     },
   },
-  "& .main-btn": {
-    transform: "rotate(0deg)",
-    transition: "all 0.6s ease",
-  },
-  "& .open": {
-    transform: "rotate(-225deg)",
+}))
+
+const MenuIcon = styled(IconButton)(({ theme }) => ({
+  zIndex: "1000",
+  position: "relative",
+  width: "2.6rem",
+  height: "2.6rem",
+  backgroundColor: theme.tertiary,
+  color: theme.secondary,
+  transitionDuration: "0.5s",
+  "&:hover": {
     backgroundColor: theme.primary,
     color: theme.tertiary,
+  },
+}))
+
+const Icon = styled("div")(({ theme }) => ({
+  transitionDuration: "0.5s",
+  position: "absolute",
+  height: "2.5px",
+  width: "20px",
+  top: "19px",
+  borderRadius: "4px",
+  backgroundColor: theme.secondary,
+
+  "&::before, &::after": {
+    borderRadius: "4px",
+    transitionDuration: "0.5s",
+    position: "absolute",
+    height: "2.5px",
+    width: "20px",
+    backgroundColor: theme.secondary,
+    content: '""',
+    left: "0",
+  },
+  "&::before": {
+    top: "-6px",
+  },
+  "&::after": {
+    top: "6px",
   },
 }))

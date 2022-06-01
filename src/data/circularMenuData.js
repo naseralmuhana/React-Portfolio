@@ -10,79 +10,79 @@ import AccountTreeOutlinedIcon from "@mui/icons-material/AccountTreeOutlined"
 export const circularMenuData = [
   {
     id: 1,
-    label: "Contacts",
-    icon: TiContacts,
-    placement: "bottom",
-    to: "#contacts",
+    label: "Home",
+    icon: AiOutlineHome,
+
+    to: "#landing",
   },
   {
     id: 2,
-    label: "Blogs",
-    icon: FaBloggerB,
-    placement: "bottom",
-    to: "#blogs",
+    label: "About Me",
+    icon: AiOutlineExclamation,
+
+    to: "#about",
   },
   {
     id: 3,
-    label: "Testimonials",
-    icon: MdOutlineFormatQuote,
-    placement: "bottom-end",
-    to: "#testimonials",
+    label: "Eduction",
+    icon: IoSchoolOutline,
+
+    to: "#education",
   },
   {
     id: 4,
-    label: "Services",
-    icon: MdOutlineMiscellaneousServices,
-    placement: "bottom-end",
-    to: "#services",
+    label: "Skills",
+    icon: GiSkills,
+
+    to: "#skills",
   },
   {
     id: 5,
-    label: "Achievement",
-    icon: GiAchievement,
-    placement: "left-start",
-    to: "#achievements",
+    label: "Experience",
+    icon: MdWorkOutline,
+
+    to: "#experience",
   },
   {
     id: 6,
     label: "Projects",
     icon: AccountTreeOutlinedIcon,
-    placement: "left-start",
+
     to: "#projects",
   },
   {
     id: 7,
-    label: "Experience",
-    icon: MdWorkOutline,
-    placement: "left-start",
-    to: "#experience",
+    label: "Achievement",
+    icon: GiAchievement,
+
+    to: "#achievements",
   },
   {
     id: 8,
-    label: "Skills",
-    icon: GiSkills,
-    placement: "left-start",
-    to: "#skills",
+    label: "Services",
+    icon: MdOutlineMiscellaneousServices,
+
+    to: "#services",
   },
   {
     id: 9,
-    label: "Eduction",
-    icon: IoSchoolOutline,
-    placement: "left-start",
-    to: "#education",
+    label: "Testimonials",
+    icon: MdOutlineFormatQuote,
+
+    to: "#testimonials",
   },
   {
     id: 10,
-    label: "About Me",
-    icon: AiOutlineExclamation,
-    placement: "left",
-    to: "#about",
+    label: "Blogs",
+    icon: FaBloggerB,
+
+    to: "#blogs",
   },
   {
     id: 11,
-    label: "Home",
-    icon: AiOutlineHome,
-    placement: "left",
-    to: "#landing",
+    label: "Contacts",
+    icon: TiContacts,
+
+    to: "#contacts",
   },
 ]

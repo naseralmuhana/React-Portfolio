@@ -19,6 +19,7 @@ const CToolTip = styled(({ className, ...props }) => (
     {...props}
     classes={{ popper: className }}
     TransitionComponent={Zoom}
+    // leaveDelay={60000}
   />
 ))(({ theme }) => ({
   [`& .${tooltipClasses.tooltip}`]: {
