@@ -4,10 +4,11 @@ import { styled } from "@mui/system"
 import { useState } from "react"
 import { FiSettings } from "react-icons/fi"
 import { themeDataUi } from "../../data/themeData"
-import CircularPlanet from "../UI/CircularPlanet"
 
 import TypeSwitcherButton from "./TypeSwitcherButton"
 import ColorSwitcherButton from "./ColorSwitcherButton"
+import CustomTooltip from "../UI/CustomTooltip"
+import CustomMenu from "../UI/CustomMenu"
 
 const ColorSwitcher = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -17,33 +18,23 @@ const ColorSwitcher = () => {
 
   return (
     <Container>
-      <CircularPlanet
-        onClick={handleClickMenu}
-        onClose={handleCloseMenu}
-        open={isOpen}
-        icon={FiSettings}
-        title="Color Switcher"
-        toolTipPlacement="bottom"
-        orbitRadius={120}
-        rotation={332}
-      >
-        {/* FirstHalf */}
-        {themeDataUi.slice(0, 4).map(({ col, label }, i) => (
-          <ColorSwitcherButton key={i} col={col} label={label} />
-        ))}
+      <CustomTooltip title="Theme" placement="top">
+        <div>
+          <SettingsIcon
+            className={isOpen ? "open" : undefined}
+            onClick={handleClickMenu}
+          >
+            <FiSettings />
+          </SettingsIcon>
+        </div>
+      </CustomTooltip>
 
-        {/* Dark / light */}
-        <TypeSwitcherButton />
-
-        {/* SecondHalf */}
-        {themeDataUi.slice(4, 8).map(({ col, label }, i) => (
-          <ColorSwitcherButton key={i + 4} col={col} label={label} />
+      <CustomMenu onClose={handleCloseMenu} show={isOpen}>
+        <TypeSwitcherButton isOpen={isOpen} />
+        {themeDataUi.map((item) => (
+          <ColorSwitcherButton key={item.id} item={item} isOpen={isOpen} />
         ))}
-
-        {[...Array(9).keys()].map((index) => (
-          <div key={index} />
-        ))}
-      </CircularPlanet>
+      </CustomMenu>
     </Container>
   )
 }
@@ -51,52 +42,40 @@ const ColorSwitcher = () => {
 export default ColorSwitcher
 
 export const Container = styled("div")(({ theme }) => ({
+  zIndex: 2000,
   position: "fixed",
-  top: "100px",
-  right: "80px",
-  zIndex: "1000",
-  transition: "transform 0.25s linear",
-  transform: "translateX(0)",
+  top: "40px",
+  right: "90px",
   [theme.breakpoints.down(800)]: {
-    right: "77px",
+    right: "60px",
   },
-  "& .iconButton": {
-    backgroundColor: theme.tertiary,
-    color: theme.secondary,
-    transition: "all 0.20s linear",
-    "&:hover": {
-      backgroundColor: theme.primary,
-      color: theme.tertiary,
-    },
-  },
-  "@keyframes rotate": {
-    "100%": {
-      transform: "rotate(360deg)",
-    },
-  },
-  "& .main-btn": {
-    animation: "rotate 2s linear infinite",
-  },
-  "& .open": {
-    animation: "rotate 1s linear infinite",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+}))
+
+const SettingsIcon = styled(IconButton)(({ theme }) => ({
+  zIndex: 1800,
+  position: "relative",
+  width: "2.6rem",
+  height: "2.6rem",
+  backgroundColor: theme.tertiary,
+  color: theme.secondary,
+  transition: "transform 0.5s",
+  // animation: "rotate 2s linear infinite",
+  "&:hover": {
     backgroundColor: theme.primary,
     color: theme.tertiary,
   },
-}))
-
-export const IconButtonColor = styled(IconButton)(({ theme, col }) => ({
-  backgroundColor: col,
-  color: theme.secondary,
-  width: "40px",
-  height: "40px",
-  transition: "all 0.20s linear",
-  "&:hover": {
-    transform: "scale(1.1)",
-    backgroundColor: col,
-  },
-  "&.whiteBlack": {
-    color: theme.tertiary,
-    background: "linear-gradient(45deg, #EAEAEA 50%,#000000 50%)",
-    border: "1px solid #000000",
+  // "@keyframes rotate": {
+  //   "100%": {
+  //     transform: "rotate(360deg)",
+  //   },
+  // },
+  "&.open": {
+    // animation: "rotate 1s linear",
+    transform: "rotate(360deg)",
+    // backgroundColor: theme.primary,
+    // color: theme.tertiary,
   },
 }))

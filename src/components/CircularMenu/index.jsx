@@ -14,7 +14,7 @@ const CircularMenu = () => {
 
   return (
     <Container>
-      <CustomTooltip title="Menu" placement="left">
+      <CustomTooltip title="Menu" placement="top">
         <MenuIcon
           className={isOpen ? "open" : undefined}
           onClick={handleClickMenu}
@@ -53,7 +53,7 @@ const Container = styled("div")(({ theme }) => ({
 }))
 
 const MenuIcon = styled(IconButton)(({ theme }) => ({
-  zIndex: "2000",
+  zIndex: "1800",
   position: "relative",
   width: "2.6rem",
   height: "2.6rem",

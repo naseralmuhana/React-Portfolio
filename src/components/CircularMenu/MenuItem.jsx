@@ -8,7 +8,15 @@ const MenuItem = ({ item, isOpen, onClose }) => {
   const ItemIcon = icon
 
   return (
-    <Link key={id} to={to} smooth style={{ position: "absolute" }}>
+    <Link
+      key={id}
+      to={to}
+      // smooth
+      scroll={(el) =>
+        el.scrollIntoView({ behavior: "smooth", block: "center" })
+      }
+      style={{ position: "absolute" }}
+    >
       <CustomTooltip title={label} placement="left">
         <Item
           index={id}

@@ -48,12 +48,12 @@ export const themeData = [
 ]
 
 export const themeDataUi = [
-  { label: "green", col: "#3fc337" },
-  { label: "white&black", col: "#f2f2f2" },
-  { label: "blue", col: "#545fc4" },
-  { label: "red", col: "#f03939" },
-  { label: "orange", col: "#f56539" },
-  { label: "purple", col: "#823ae0" },
-  { label: "pink", col: "#ff4f93" },
-  { label: "yellow", col: "#E9AD35" },
+  { id: 1, label: "green", col: "#3fc337" },
+  { id: 2, label: "white&black", col: "#f2f2f2" },
+  { id: 3, label: "blue", col: "#545fc4" },
+  { id: 4, label: "red", col: "#f03939" },
+  { id: 5, label: "orange", col: "#f56539" },
+  { id: 6, label: "purple", col: "#823ae0" },
+  { id: 7, label: "pink", col: "#ff4f93" },
+  { id: 8, label: "yellow", col: "#E9AD35" },
 ]
