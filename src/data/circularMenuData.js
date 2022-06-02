@@ -2,7 +2,9 @@ import { AiOutlineHome, AiOutlineExclamation } from "react-icons/ai"
 import { TiContacts } from "react-icons/ti"
 import { GiSkills, GiAchievement } from "react-icons/gi"
 // prettier-ignore
-import { MdWorkOutline, MdOutlineMiscellaneousServices, MdOutlineFormatQuote } from "react-icons/md"
+import { 
+  MdWorkOutline, MdOutlineMiscellaneousServices, MdOutlineFormatQuote 
+} from "react-icons/md"
 import { IoSchoolOutline } from "react-icons/io5"
 import { FaBloggerB } from "react-icons/fa"
 import AccountTreeOutlinedIcon from "@mui/icons-material/AccountTreeOutlined"

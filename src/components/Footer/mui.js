@@ -2,7 +2,7 @@ import { styled } from "@mui/material/styles"
 import "../../App.css"
 
 // Footer Section
-export const Section = styled("section")(({ theme }) => ({
+export const Section = styled("footer")(({ theme }) => ({
   backgroundColor: theme.secondary,
   display: "flex",
   justifyContent: "center",

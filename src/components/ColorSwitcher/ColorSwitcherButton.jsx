@@ -2,7 +2,7 @@ import IconButton from "@mui/material/IconButton"
 import { styled } from "@mui/system"
 import { FiCheck } from "react-icons/fi"
 import { useThemeContext } from "../../contexts/theme"
-import CustomTooltip from "../UI/CustomTooltip"
+import CustomTooltip from "../CustomTooltip"
 
 const ColorSwitcherButton = ({ item, isOpen }) => {
   const { id, col, label } = item

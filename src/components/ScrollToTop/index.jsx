@@ -2,7 +2,7 @@ import Box from "@mui/material/Box"
 import IconButton from "@mui/material/IconButton"
 import { styled } from "@mui/system"
 import { IoIosArrowUp } from "react-icons/io"
-import CustomTooltip from "../UI/CustomTooltip"
+import CustomTooltip from "../CustomTooltip"
 import { useVisibility } from "../../hooks"
 import { animateScroll as scroll } from "react-scroll"
 

@@ -1,14 +1,12 @@
 import IconButton from "@mui/material/IconButton"
-
 import { styled } from "@mui/system"
 import { useState } from "react"
 import { FiSettings } from "react-icons/fi"
+import CustomTooltip from "../CustomTooltip"
+import CustomMenu from "../CustomMenu"
 import { themeDataUi } from "../../data/themeData"
-
-import TypeSwitcherButton from "./TypeSwitcherButton"
 import ColorSwitcherButton from "./ColorSwitcherButton"
-import CustomTooltip from "../UI/CustomTooltip"
-import CustomMenu from "../UI/CustomMenu"
+import TypeSwitcherButton from "./TypeSwitcherButton"
 
 const ColorSwitcher = () => {
   const [isOpen, setIsOpen] = useState(false)

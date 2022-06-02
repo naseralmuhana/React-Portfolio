@@ -4,7 +4,7 @@ import { Section } from "./mui"
 
 const Footer = () => {
   return (
-    <Section id="footer">
+    <Section  id="footer">
       <Slide direction="up">
         <p>
           Made with

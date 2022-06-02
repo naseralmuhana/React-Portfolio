@@ -3,7 +3,7 @@ import LightModeOutlined from "@mui/icons-material/LightModeOutlined"
 import IconButton from "@mui/material/IconButton"
 import { styled } from "@mui/system"
 import { useThemeContext } from "../../contexts/theme"
-import CustomTooltip from "../UI/CustomTooltip"
+import CustomTooltip from "../CustomTooltip"
 
 const TypeSwitcherButton = ({ isOpen }) => {
   const { toggleThemeType, themeType } = useThemeContext()
