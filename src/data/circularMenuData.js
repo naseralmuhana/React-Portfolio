@@ -54,7 +54,7 @@ export const circularMenuData = [
   },
   {
     id: 7,
-    label: "Achievement",
+    label: "Achievements",
     icon: GiAchievement,
 
     to: "achievements",

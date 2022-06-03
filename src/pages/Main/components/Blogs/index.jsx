@@ -8,7 +8,7 @@ import {
   Body, CardsContainer, Header, Section, Title, ViewAllBtn, ViewAllContainer, ViewAllIcon 
 } from "./mui"
 
-const Blog = () => {
+const Blogs = () => {
   if (blogData.length === 0) return
   const cards = blogData
     .slice(0, 3)
@@ -25,7 +25,7 @@ const Blog = () => {
       {/* ViewAll Button*/}
       {blogData.length > 3 && (
         <ViewAllContainer>
-          <Link to="/">
+          <Link to="/blogs">
             <CustomTooltip title="BLOGS">
               <ViewAllBtn>
                 View All
@@ -39,4 +39,4 @@ const Blog = () => {
   )
 }
 
-export default Blog
+export default Blogs

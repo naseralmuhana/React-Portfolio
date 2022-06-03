@@ -3,7 +3,7 @@ import AchievementCard from "./AchievementCard"
 // prettier-ignore
 import { Bio, Body, CardsContainer, Section, Title } from "./mui"
 
-const Achievement = () => {
+const Achievements = () => {
   if (achievementData.achievements.length === 0) return
 
   const cards = achievementData.achievements.map((achieve) => (
@@ -22,4 +22,4 @@ const Achievement = () => {
   )
 }
 
-export default Achievement
+export default Achievements
