@@ -1,4 +1,6 @@
 export { default as placeholder } from "./png/placeholder.png"
+export { default as profile } from "./png/profile.png"
+export { default as profileNoBackground } from "./png/profile-nobackground.png"
 
 export { default as resume } from "./pdf/resume.pdf"
 

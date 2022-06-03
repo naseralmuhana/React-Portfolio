@@ -25,7 +25,7 @@ const Skills = () => {
             style={{ padding: "3rem 0" }}
           >
             {skillsData.map((skill, id) => (
-              <Card className="skill--box" key={id}>
+              <Card key={id}>
                 <CardImage src={skillsImage(skill)} alt={skill} />
                 <CardTitle>{skill}</CardTitle>
               </Card>

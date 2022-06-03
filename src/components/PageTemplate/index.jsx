@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import ColorSwitcher from "../ColorSwitcher"
 import Wrapper from "../Wrapper"
@@ -6,6 +6,7 @@ import Wrapper from "../Wrapper"
 import {
     Body, Content, GridContainer, Header, HomeIcon, Search, Section
 } from "./mui"
+import { animateScroll as scroll } from "react-scroll"
 
 const PageTemplate = (props) => {
   const { tabTitle, title, placeholder, children, onSearch } = props
@@ -16,6 +17,11 @@ const PageTemplate = (props) => {
     setSearch(e.target.value)
     onSearch(e.target.value)
   }
+
+  useEffect(() => {
+    scroll.scrollToTop()
+  }, [])
+
   return (
     <>
       <ColorSwitcher />
