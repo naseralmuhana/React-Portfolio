@@ -2,10 +2,9 @@ import { CustomTooltip } from "../../../../../components"
 import { Btn, BtnIcon } from "./mui"
 
 const IconBtn = ({ href, name, icon, iconId }) => {
-  const btnAria = `${name.replace(" ", "-").toLowerCase()} ${name
-    .replace(" ", "-")
-    .toLowerCase()}-code`
-  const btnIconId = `${name.replace(" ", "-").toLowerCase()}-demo`
+  const btnAria = `${name?.replace(" ", "-").toLowerCase()} 
+  ${name?.replace(" ", "-").toLowerCase()}-code`
+  const btnIconId = `${name?.replace(" ", "-").toLowerCase()}-demo`
 
   return (
     <CustomTooltip title={iconId}>

@@ -9,12 +9,12 @@ import {
 
 const ProjectCard = ({ project }) => {
   // prettier-ignore
-  const { id, projectName: name, projectDesc: desc, tags, code, demo, image } = project
-  const titleId = name.replace(" ", "-").toLowerCase()
+  const { projectName: name, projectDesc: desc, tags, code, demo, image } = project
+  const titleId = name?.replace(" ", "-").toLowerCase()
 
   return (
     <Bounce style={{ width: "304px", height: "360px" }}>
-      <Card key={id}>
+      <Card>
         {/* Visible Content */}
         <Content>
           {/* Title */}
@@ -30,7 +30,7 @@ const ProjectCard = ({ project }) => {
         {/* onHover Content */}
         <Description className="description">{desc}</Description>
         <Tags className="tags">
-          {tags.map((tag, id) => (
+          {tags?.slice(0, 4).map((tag, id) => (
             <TagSpan key={id}>{tag}</TagSpan>
           ))}
         </Tags>

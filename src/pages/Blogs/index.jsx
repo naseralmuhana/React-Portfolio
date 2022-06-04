@@ -23,7 +23,7 @@ const Blogs = () => {
   return (
     <PageTemplate {...settings}>
       {filteredBlogs.map((blog) => (
-        <BlogCard id={blog.id} blog={blog} />
+        <BlogCard key={blog.id} blog={blog} />
       ))}
     </PageTemplate>
   )

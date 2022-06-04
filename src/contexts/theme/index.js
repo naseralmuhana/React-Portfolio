@@ -4,9 +4,9 @@ import { themeData } from "../../data/themeData"
 // prettier-ignore
 import {  retrieveStoredThemeData, savetoLocalStorage } from "./helper"
 
-export const ThemeContext = React.createContext()
+const ThemeContext = React.createContext()
 
-const ThemeContextProvider = ({ children }) => {
+export const ThemeContextProvider = ({ children }) => {
   // Get the type & color from localStorage
   const { initialThemeType, initialThemeColor } = retrieveStoredThemeData()
   const [themeType, setThemeType] = useState(initialThemeType) // light
@@ -50,7 +50,5 @@ const ThemeContextProvider = ({ children }) => {
     </ThemeContext.Provider>
   )
 }
-
-export default ThemeContextProvider
 
 export const useThemeContext = () => useContext(ThemeContext)

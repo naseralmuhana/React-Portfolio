@@ -31,7 +31,6 @@ const Landing = () => {
 
         {/* Rounded Animated Image */}
         <Blob src={headerData.image} />
-        {console.log(headerData.image)}
         {/* Right Container */}
         <RightContainer>
           <RightContainerContent>
