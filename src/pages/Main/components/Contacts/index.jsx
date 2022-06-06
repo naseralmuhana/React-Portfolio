@@ -1,9 +1,9 @@
 import { useTheme } from "@mui/material"
 import { Fade } from "react-awesome-reveal"
-import { CustomTooltip } from "../../../../components"
+// prettier-ignore
+import { CustomTooltip, SectionTitle } from "../../../../components"
 // prettier-ignore
 import { contactsDetailsInfo, socialsContactData } from "../../../../data"
-
 import ContactsForm from "./ContactsForm"
 // prettier-ignore
 import {
@@ -30,7 +30,8 @@ const Contacts = () => {
     <Section id="contacts">
       {/* Container */}
       <Container>
-        <h1>Contacts</h1>
+        {/* Title */}
+        <SectionTitle>Contacts</SectionTitle>
         {/* Body */}
         <Body>
           {/* Form */}

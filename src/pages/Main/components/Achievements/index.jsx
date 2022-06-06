@@ -1,7 +1,8 @@
+import { SectionTitle } from "../../../../components"
 import { achievementData } from "../../../../data"
 import AchievementCard from "./AchievementCard"
 // prettier-ignore
-import { Bio, Body, CardsContainer, Section, Title } from "./mui"
+import { Bio, Body, CardsContainer, Section } from "./mui"
 
 const Achievements = () => {
   if (achievementData.achievements.length === 0) return
@@ -13,7 +14,9 @@ const Achievements = () => {
     <Section id="achievements">
       {/* Body */}
       <Body>
-        <Title>Achievements</Title>
+        {/* Title */}
+        <SectionTitle sx={{ mb: { md: "1.5rem" } }}>Achievements</SectionTitle>
+        {/* Bio */}
         <Bio>{achievementData.bio}</Bio>
       </Body>
       {/* Cards */}

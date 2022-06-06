@@ -13,13 +13,14 @@ export const socialsData = [
     href: "https://www.linkedin.com/in",
     icon: FaLinkedin,
   },
-  { label: "Github", href: "https://github.com/", icon: FaGithub },
+  { label: "Github", href: "https://github.com/naseralmuhana", icon: FaGithub },
   { label: "Twitter", href: "https://twitter.com/", icon: FaTwitter },
   { label: "Youtube", href: "https://youtube.com/", icon: FaYoutube },
   { label: "Blogger", href: "https://www.blogger.com/", icon: FaBlogger },
 ]
+
 export const socialsContactData = [
-  { href: "https://github.com/", label: "github", icon: FaGithub },
+  { href: "https://github.com/naseralmuhana", label: "github", icon: FaGithub },
   { href: "https://www.facebook.com/", label: "facebook", icon: FaFacebookF },
   {
     href: "https://www.linkedin.com/in",

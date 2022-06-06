@@ -1,33 +1,31 @@
 import { FiPhone, FiAtSign } from "react-icons/fi"
 import { HiOutlineLocationMarker } from "react-icons/hi"
 
-export const contactsData = {
-  email: "janedoe.test@gmail.com",
-  phone: "+915588776600",
-  address: "Menlo Park, California, United States - 673822 ",
-
-  sheetAPI: "",
-}
+// export const contactsData = {
+//   email: "naseralmuhana0@gmail.com",
+//   phone: "+962787828021",
+//   address: "Amman,Jordan",
+//   sheetAPI: "",
+// }
 
 export const contactsDetailsInfo = [
   {
     id: "Email",
-    title: "janedoe.test@gmail.com",
+    title: "naseralmuhana0@gmail.com",
     component: "a",
-    href: `mailto:janedoe.test@gmail.com`,
+    href: `mailto:naseralmuhana0@gmail.com`,
     icon: <FiAtSign />,
   },
   {
     id: "Phone",
-
-    title: "+915588776600",
+    title: "+962787828021",
     component: "a",
-    href: `tel:+915588776600`,
+    href: `tel:+962787828021`,
     icon: <FiPhone />,
   },
   {
     id: "Address",
-    title: "Menlo Park, California, United States - 673822",
+    title: "Amman, Jordan",
     component: "div",
     icon: <HiOutlineLocationMarker />,
   },

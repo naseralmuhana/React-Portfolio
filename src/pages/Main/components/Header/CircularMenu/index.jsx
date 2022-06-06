@@ -13,7 +13,7 @@ const CircularMenu = () => {
 
   return (
     <Container>
-      <CustomTooltip title="Menu" placement="top">
+      <CustomTooltip title="Menu" placement="left">
         <MenuIcon
           className={isOpen ? "open" : undefined}
           onClick={handleClickMenu}
@@ -40,11 +40,10 @@ export default CircularMenu
 
 const Container = styled("div")(({ theme }) => ({
   position: "fixed",
-  top: "40px",
-  right: "40px",
-
+  top: "25px",
+  right: "90px",
   [theme.breakpoints.down(800)]: {
-    right: "10px",
+    right: "60px",
   },
   display: "flex",
   alignItems: "center",
@@ -64,6 +63,7 @@ const MenuIcon = styled(IconButton)(({ theme }) => ({
   backgroundColor: theme.tertiary,
   color: theme.secondary,
   transition: "transform 0.5s",
+  boxShadow: "-4px 7px 12px -5px rgba(0,0,0,0.5)",
   "&:hover": {
     backgroundColor: theme.primary,
     color: theme.tertiary,

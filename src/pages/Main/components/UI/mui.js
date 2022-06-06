@@ -39,24 +39,6 @@ export const DescriptionContainer = styled("div")(({ theme }) => ({
   },
 }))
 
-// Section Title
-export const Title = styled("h1")(({ theme }) => ({
-  color: theme.primary,
-  fontSize: "3.5rem",
-  fontFamily: "var(--primaryFont)",
-  marginBottom: "2rem",
-  [theme.breakpoints.down(992)]: {
-    fontSize: "3.2rem",
-  },
-  [theme.breakpoints.down(800)]: {
-    fontSize: "3rem",
-    alignSelf: "center",
-  },
-  [theme.breakpoints.down(600)]: {
-    fontSize: "2.5rem",
-  },
-}))
-
 // Section Image Container
 export const ImageContainer = styled("div")(({ theme }) => ({
   flex: 0.35,

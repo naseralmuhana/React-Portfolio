@@ -16,15 +16,13 @@ const ColorSwitcher = () => {
 
   return (
     <Container>
-      <CustomTooltip title="Theme" placement="top">
-        <div>
-          <SettingsIcon
-            className={isOpen ? "open" : undefined}
-            onClick={handleClickMenu}
-          >
-            <FiSettings />
-          </SettingsIcon>
-        </div>
+      <CustomTooltip title="Theme" placement={isOpen ? "left" : "bottom"}>
+        <SettingsIcon
+          className={isOpen ? "open" : undefined}
+          onClick={handleClickMenu}
+        >
+          <FiSettings />
+        </SettingsIcon>
       </CustomTooltip>
 
       <CustomMenu onClose={handleCloseMenu} show={isOpen}>
@@ -42,10 +40,10 @@ export default ColorSwitcher
 export const Container = styled("div")(({ theme }) => ({
   zIndex: 2000,
   position: "fixed",
-  top: "40px",
-  right: "90px",
+  top: "25px",
+  right: "40px",
   [theme.breakpoints.down(800)]: {
-    right: "60px",
+    right: "10px",
   },
   display: "flex",
   alignItems: "center",
@@ -59,12 +57,14 @@ const SettingsIcon = styled(IconButton)(({ theme }) => ({
   height: "2.6rem",
   backgroundColor: theme.tertiary,
   color: theme.secondary,
-  transition: "transform 0.5s",
+  transition: "all 0.5s",
+  boxShadow: "-4px 7px 12px -5px rgba(0,0,0,0.5)",
   // animation: "rotate 2s linear infinite",
   "&:hover": {
     backgroundColor: theme.primary,
     color: theme.tertiary,
   },
+
   // "@keyframes rotate": {
   //   "100%": {
   //     transform: "rotate(360deg)",

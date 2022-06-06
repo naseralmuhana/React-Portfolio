@@ -24,7 +24,7 @@ export const Section = styled("section")(({ theme }) => ({
 
 /**
  * Achievement Body
- * Content => [Title, Bio(Description)]
+ * Content => [Bio(Description)]
  */
 
 // Achievement Body
@@ -40,20 +40,6 @@ export const Body = styled("div")(({ theme }) => ({
   },
   [theme.breakpoints.down(992)]: {
     width: "100%",
-  },
-}))
-
-// Achievement Title
-export const Title = styled("h1")(({ theme }) => ({
-  color: theme.primary,
-  fontFamily: "var(--primaryFont)",
-  fontSize: "3.5rem",
-  marginBottom: "1.5rem",
-  [theme.breakpoints.between(992, 1380)]: {
-    fontSize: "3.1rem",
-  },
-  [theme.breakpoints.down(992)]: {
-    fontSize: "2.5rem",
   },
 }))
 

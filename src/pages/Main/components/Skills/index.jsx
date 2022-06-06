@@ -1,18 +1,19 @@
 import Marquee from "react-fast-marquee"
+// prettier-ignore
+import { SectionHeader, SectionTitle } from "../../../../components"
 import { skillsData } from "../../../../data"
 import { skillsImage } from "../../../../utils"
 // prettier-ignore
-import { 
-  Card, CardImage, CardTitle, Scroll, Body, Section, Title, Header 
-} from "./mui"
+import { Body, Card, CardImage, CardTitle, Scroll, Section } from "./mui"
 
 const Skills = () => {
   return (
     <Section id="skills">
       {/* Header*/}
-      <Header>
-        <Title>Skills</Title>
-      </Header>
+      <SectionHeader sx={{ m: "0.7rem" }}>
+        {/* Title */}
+        <SectionTitle sx={{ mb: { xs: 0 } }}>Skills</SectionTitle>
+      </SectionHeader>
       {/* Body */}
       <Body>
         {/* Scroll */}

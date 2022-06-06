@@ -15,36 +15,6 @@ export const Section = styled("section")(({ theme }) => ({
 }))
 
 /**
- * Blog Header
- * Content => [Title]
- */
-
-// Blog Header
-export const Header = styled("div")({
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  width: "100%",
-  margin: "1rem",
-})
-
-// Blog Title
-export const Title = styled("h1")(({ theme }) => ({
-  color: theme.primary,
-  fontFamily: "var(--primaryFont)",
-  fontSize: "3.5rem",
-  marginBottom: "40px",
-  [theme.breakpoints.down(800)]: {
-    fontSize: "3rem",
-    marginBottom: "30px",
-  },
-  [theme.breakpoints.down(600)]: {
-    fontSize: "2.5rem",
-    marginBottom: "20px",
-  },
-}))
-
-/**
  * Blog Body
  * Content => [Cards, ViewAll Button]
  */

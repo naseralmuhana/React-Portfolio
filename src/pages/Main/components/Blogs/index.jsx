@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom"
-import { CustomTooltip } from "../../../../components"
+// prettier-ignore
+import { CustomTooltip, SectionHeader, SectionTitle } from "../../../../components"
 import { blogData } from "../../../../data"
-
 import BlogCard from "./BlogCard"
 // prettier-ignore
-import { 
-  Body, CardsContainer, Header, Section, Title, ViewAllBtn, ViewAllContainer, ViewAllIcon 
+import {
+  Body, CardsContainer, Section, ViewAllBtn, ViewAllContainer, ViewAllIcon
 } from "./mui"
 
 const Blogs = () => {
@@ -16,10 +16,14 @@ const Blogs = () => {
     .map((blog) => <BlogCard key={blog.id} blog={blog} />)
   return (
     <Section id="blogs">
-      <Header>
-        <Title>Blogs</Title>
-      </Header>
+      {/* Header */}
+      <SectionHeader>
+        {/* Title */}
+        <SectionTitle>Blogs</SectionTitle>
+      </SectionHeader>
+      {/* Body */}
       <Body>
+        {/* Cards */}
         <CardsContainer>{cards}</CardsContainer>
       </Body>
       {/* ViewAll Button*/}

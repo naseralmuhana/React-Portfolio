@@ -1,11 +1,12 @@
 import { useTheme } from "@mui/material"
 import { Fade } from "react-awesome-reveal"
 import { eduImgBlack, eduImgWhite } from "../../../../assets"
+import { SectionTitle } from "../../../../components"
 import { educationData } from "../../../../data"
 import Card from "../UI/Card"
 // prettier-ignore
 import { 
-  Body, DescriptionContainer, ImageContainer, Section, Title 
+  Body, DescriptionContainer, ImageContainer, Section
 } from "../UI/mui"
 
 const Education = () => {
@@ -30,7 +31,8 @@ const Education = () => {
       <Body>
         {/* Description */}
         <DescriptionContainer>
-          <Title>Education</Title>
+          {/* <Title>Education</Title> */}
+          <SectionTitle>Education</SectionTitle>
           {Cards}
         </DescriptionContainer>
         {/* Image */}

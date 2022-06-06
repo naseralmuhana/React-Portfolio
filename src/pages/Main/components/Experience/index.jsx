@@ -1,11 +1,12 @@
 import { useTheme } from "@mui/material"
 import { Fade } from "react-awesome-reveal"
 import { expImgBlack, expImgWhite } from "../../../../assets"
+import { SectionTitle } from "../../../../components"
 import { experienceData } from "../../../../data"
 import Card from "../UI/Card"
 // prettier-ignore
 import { 
-  Body, DescriptionContainer, ImageContainer, Section, Title 
+  Body, DescriptionContainer, ImageContainer, Section
 } from "../UI/mui"
 
 /**
@@ -49,7 +50,8 @@ const Experience = () => {
         <DescriptionContainer
           sx={{ alignItems: "flex-end", ml: 0, mr: "2rem" }}
         >
-          <Title>Experience</Title>
+          {/* <Title>Experience</Title> */}
+          <SectionTitle>Experience</SectionTitle>
           {Cards}
         </DescriptionContainer>
       </Body>

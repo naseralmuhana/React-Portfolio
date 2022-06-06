@@ -23,7 +23,7 @@ export const Section = styled("section")(({ theme }) => ({
  * Content => [Title, Body]
  */
 
-// Contacts Container & Title style
+// Contacts Container
 export const Container = styled("div")(({ theme }) => ({
   ...flexColumnStart,
   width: "80%",
@@ -42,24 +42,6 @@ export const Container = styled("div")(({ theme }) => ({
     alignItems: "center",
     padding: "2rem",
     marginTop: 0,
-  },
-  "& > h1": {
-    color: theme.primary,
-    fontFamily: "var(--primaryFont)",
-    fontSize: "3.5rem",
-    marginBottom: "2.5rem",
-    [theme.breakpoints.down(992)]: {
-      fontSize: "3rem",
-      margin: "0 0 1.2rem 0",
-    },
-    [theme.breakpoints.down(800)]: {
-      fontSize: "3rem",
-      marginBottom: "30px",
-    },
-    [theme.breakpoints.down(600)]: {
-      fontSize: "2.5rem",
-      marginBottom: "20px",
-    },
   },
 }))
 
@@ -270,7 +252,7 @@ export const PersonalDetailsContainer = styled(Box)(({ theme }) => ({
     fontWeight: 500,
     lineHeight: "110%",
     marginLeft: "1.5rem",
-    width: "45%",
+    width: "70%",
     wordBreak: "break-word",
     [theme.breakpoints.down(992)]: {
       marginLeft: "1rem",

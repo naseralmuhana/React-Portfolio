@@ -23,35 +23,6 @@ export const Section = styled("section")(({ theme }) => ({
 }))
 
 /**
- * Skills Header
- * Content => [Title]
- */
-
-// Skills Header
-export const Header = styled("div")({
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-})
-
-// Skills Title
-export const Title = styled("h2")(({ theme }) => ({
-  color: theme.primary,
-  textAlign: "center",
-  fontFamily: "var(--primaryFont)",
-  fontSize: "3.5rem",
-  [theme.breakpoints.down(992)]: {
-    fontSize: "3.2rem",
-  },
-  [theme.breakpoints.down(800)]: {
-    fontSize: "3rem",
-  },
-  [theme.breakpoints.down(600)]: {
-    fontSize: "2.5rem",
-  },
-}))
-
-/**
  * Skills Body
  * Content => [Scroll(Cards)]
  */

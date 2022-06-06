@@ -1,17 +1,23 @@
 export const retrieveStoredThemeData = () => {
+  const isSystemDarkTheme = window.matchMedia(
+    "(prefers-color-scheme: dark)"
+  ).matches
+
   // retrieve the storedThemeType, if not found return light as default
-  const storedThemeType = localStorage.getItem("themeType")
+  const initialThemeType = localStorage.getItem("themeType")
     ? JSON.parse(localStorage.getItem("themeType"))
+    : isSystemDarkTheme
+    ? "dark"
     : "light"
 
   // retrieve the storedThemeColor, if not found return orange as default
-  const storedThemeColor = localStorage.getItem("themeColor")
+  const initialThemeColor = localStorage.getItem("themeColor")
     ? JSON.parse(localStorage.getItem("themeColor"))
     : "blue"
 
   return {
-    initialThemeType: storedThemeType,
-    initialThemeColor: storedThemeColor,
+    initialThemeType,
+    initialThemeColor,
   }
 }
 

@@ -20,7 +20,7 @@ const CustomSnackbar = ({ message, onClose, open }) => {
         horizontal: "center",
       }}
       open={open}
-      autoHideDuration={6000}
+      autoHideDuration={4000}
       TransitionComponent={transition}
       draggable={true}
       onClose={onClose}

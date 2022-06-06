@@ -4,7 +4,6 @@ import { handleProjects } from "./helper"
 const ProjectsContext = React.createContext()
 
 export const ProjectsContextProvider = ({ children }) => {
-  console.log("ProjectsContextProvider")
   const [projects, setProjects] = useState([])
 
   useEffect(() => {

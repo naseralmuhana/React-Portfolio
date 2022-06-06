@@ -20,7 +20,7 @@ export const Section = styled("section")(({ theme }) => ({
 
 /**
  * Testimonials Header
- * Content => [Title]
+ * Content => []
  */
 
 // Testimonials Header
@@ -29,25 +29,6 @@ export const Section = styled("section")(({ theme }) => ({
 //   alignItems: "center",
 //   justifyContent: "center",
 // })
-
-// Testimonials Title
-export const Title = styled("h1")(({ theme }) => ({
-  color: theme.secondary,
-  textAlign: "center",
-  fontSize: "3.5rem",
-  fontWeight: "bold",
-  fontStyle: "normal",
-  [theme.breakpoints.down(992)]: {
-    fontSize: "3rem",
-    marginTop: "1.75rem",
-  },
-  [theme.breakpoints.down(800)]: {
-    fontSize: "2.5rem",
-  },
-  [theme.breakpoints.down(360)]: {
-    fontSize: "2.2rem",
-  },
-}))
 
 /**
  * Testimonials Body

@@ -1,9 +1,10 @@
 import { useTheme } from "@mui/material"
 import { Fade } from "react-awesome-reveal"
+import { SectionTitle } from "../../../../components"
 import { aboutData } from "../../../../data"
 // prettier-ignore
 import { 
-    Body, Description, DescriptionContainer, Image, ImageContainer, Section, Title, Circle, Line, LineContainer 
+    Body, Description, DescriptionContainer, Image, ImageContainer, Section, Circle, Line, LineContainer 
 } from "./mui"
 
 const About = () => {
@@ -21,7 +22,7 @@ const About = () => {
         {/* Description & Title Container */}
         <DescriptionContainer>
           {/* title */}
-          <Title>{aboutData.title}</Title>
+          <SectionTitle>{aboutData.title}</SectionTitle>
           {/* Description */}
           <Description>
             {aboutData.description1}

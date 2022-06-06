@@ -5,19 +5,18 @@ export const handleProjects = async () => {
   const rawProjects = await getProjects()
   // actions
   let transformProjects = []
-  rawProjects
-    .filter((repo) => repo.is_template)
-    .forEach((repo) => {
-      transformProjects.push({
-        id: repo.id,
-        projectName: repo.name,
-        projectDesc: repo.description,
-        tags: repo.topics,
-        code: repo.svn_url,
-        demo: repo.homepage,
-        image: one,
-      })
+  rawProjects.forEach((project) => {
+    transformProjects.push({
+      id: project.id,
+      isTemplate: project.is_template,
+      projectName: project.name,
+      projectDesc: project.description,
+      tags: project.topics,
+      code: project.svn_url,
+      demo: project.homepage,
+      image: one,
     })
+  })
 
   return transformProjects
 }

@@ -59,7 +59,7 @@ export const Line = styled("div")(({ theme }) => ({
 
 /**
  * About Body
- * Content => [Title, Description, Image]
+ * Content => [Description, Image]
  */
 
 // Body
@@ -90,28 +90,6 @@ export const DescriptionContainer = styled("div")(({ theme }) => ({
     flex: 0.6,
     /* padding: 5% 10%; */
     padding: "20px",
-  },
-}))
-
-// Title
-export const Title = styled("h2")(({ theme }) => ({
-  color: theme.primary,
-  fontFamily: "var(--primaryFont)",
-  fontSize: "3.5rem",
-  marginBottom: "40px",
-  [theme.breakpoints.between(992, 1380)]: {
-    fontSize: "3.3rem",
-    marginBottom: "30px",
-  },
-  [theme.breakpoints.down(992)]: {
-    fontSize: "3rem",
-    marginBottom: "20px",
-  },
-  [theme.breakpoints.down(800)]: {
-    alignSelf: "center",
-  },
-  [theme.breakpoints.down(600)]: {
-    fontSize: "2.5rem",
   },
 }))
 

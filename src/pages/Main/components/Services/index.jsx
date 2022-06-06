@@ -1,6 +1,8 @@
+// prettier-ignore
+import { SectionHeader, SectionTitle } from "../../../../components"
 import { servicesData } from "../../../../data"
 // prettier-ignore
-import { Body, CardsContainer, Description, Header, Section, Title } from "./mui"
+import { Body, CardsContainer, Description, Section } from "./mui"
 import ServiceCard from "./ServiceCard"
 
 const Services = () => {
@@ -12,10 +14,10 @@ const Services = () => {
   return (
     <Section id="services">
       {/* Header */}
-      <Header>
+      <SectionHeader sx={{ m: 0 }}>
         {/* Title */}
-        <Title>Services</Title>
-      </Header>
+        <SectionTitle>Services</SectionTitle>
+      </SectionHeader>
       {/* Body */}
       <Body>
         {/* Description */}

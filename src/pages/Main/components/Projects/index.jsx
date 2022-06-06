@@ -1,33 +1,35 @@
 import { Link } from "react-router-dom"
-import { projectsData } from "../../../../data"
-import { CustomTooltip } from "../../../../components"
-
+//  prettier-ignore
+import { CustomTooltip, SectionHeader, SectionTitle } from "../../../../components"
+import { useProjectsContext } from "../../../../contexts"
 //  prettier-ignore
 import {
-  Body, CardsContainer, Section, Title, Header, ViewAllBtn, ViewAllContainer, ViewAllIcon
+  Body, CardsContainer, Section, ViewAllBtn, ViewAllContainer, ViewAllIcon
 } from "./mui"
 import ProjectCard from "./ProjectCard"
 
 const Projects = () => {
-  if (projectsData.length === 0) return
+  const { projects } = useProjectsContext()
+  if (projects.length === 0) return
 
-  const cards = projectsData
+  const cards = projects
+    .filter((project) => project.isTemplate)
     .slice(0, 3)
     .map((project) => <ProjectCard key={project.id} project={project} />)
 
   return (
     <Section id="projects">
       {/* Header */}
-      <Header>
+      <SectionHeader>
         {/* Title */}
-        <Title>Projects</Title>
-      </Header>
+        <SectionTitle>Projects</SectionTitle>
+      </SectionHeader>
       {/* Body */}
       <Body>
         {/* Cards */}
         <CardsContainer>{cards}</CardsContainer>
         {/* ViewAll Button*/}
-        {projectsData.length > 3 && (
+        {projects.length > 3 && (
           <ViewAllContainer>
             <Link to="/projects">
               <CustomTooltip title="PROJECTS">

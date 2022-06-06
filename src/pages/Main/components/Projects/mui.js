@@ -15,36 +15,6 @@ export const Section = styled("section")(({ theme }) => ({
 }))
 
 /**
- * Projects Header
- * Content => [Title]
- */
-
-// Projects Header
-export const Header = styled("div")({
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  width: "100%",
-  margin: "1rem",
-})
-
-// Projects Title
-export const Title = styled("h1")(({ theme }) => ({
-  color: theme.primary,
-  fontFamily: "var(--primaryFont)",
-  fontSize: "3.5rem",
-  marginBottom: "40px",
-  [theme.breakpoints.down(800)]: {
-    fontSize: "3rem",
-    marginBottom: "30px",
-  },
-  [theme.breakpoints.down(600)]: {
-    fontSize: "2.5rem",
-    marginBottom: "20px",
-  },
-}))
-
-/**
  * Projects Body
  * Content => [Cards, ViewAll Button]
  */
@@ -66,18 +36,16 @@ export const CardsContainer = styled("div")(({ theme }) => ({
   justifyContent: "center",
   width: "100%",
   gap: "4.5rem",
+  [theme.breakpoints.down(1100)]: {
+    gap: "2.75rem",
+  },
   [theme.breakpoints.down(992)]: {
-    // flexWrap: "wrap",
-    flexDirection: "column",
+    flexWrap: "wrap",
+    gap: "3.5rem",
   },
   [theme.breakpoints.down(800)]: {
-    // gap: "2.5rem",
     flexDirection: "column",
   },
-  // [theme.breakpoints.down(600)]: {
-  //   flexDirection: "column",
-  //   flexWrap: "nowrap",
-  // },
 }))
 
 // Projects ViewAll Container
@@ -88,16 +56,8 @@ export const ViewAllContainer = styled("div")(({ theme }) => ({
   width: "100%",
   marginTop: "2rem",
   padding: "2rem",
-  "& a": {
-    [theme.breakpoints.down(600)]: {
-      position: "absolute",
-      left: "50%",
-      transform: "translateX(-50%)",
-    },
-  },
-  [theme.breakpoints.down(600)]: {
-    marginTop: "4rem",
-    position: "relative",
+  [theme.breakpoints.down(800)]: {
+    justifyContent: "center",
   },
 }))
 
