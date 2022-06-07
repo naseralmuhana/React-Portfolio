@@ -22,19 +22,8 @@
   box-sizing: border-box;
 }
 
-/* scrollBar */
-
-::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
-::-webkit-scrollbar-track {
-  background: #555;
-}
-::-webkit-scrollbar-thumb {
-  background: rgb(75, 1, 1);
-  border-radius: 10px;
-  transition: 0.3s;
+body {
+  scroll-behavior: smooth;
 }
 
 /* DEFAULT */

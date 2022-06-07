@@ -61,12 +61,13 @@ const MenuIcon = styled(IconButton)(({ theme }) => ({
   width: "2.6rem",
   height: "2.6rem",
   backgroundColor: theme.tertiary,
-  color: theme.secondary,
-  transition: "transform 0.5s",
-  boxShadow: "-4px 7px 12px -5px rgba(0,0,0,0.5)",
+  transition: "0.5s",
+  boxShadow: "-4px 7px 12px -5px rgba(0,0,0,0.2)",
   "&:hover": {
     backgroundColor: theme.primary,
-    color: theme.tertiary,
+    ".icon, .icon::before, .icon::after": {
+      backgroundColor: theme.tertiary,
+    },
   },
   "&.open": {
     ".icon": {

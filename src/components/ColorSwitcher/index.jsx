@@ -58,7 +58,7 @@ const SettingsIcon = styled(IconButton)(({ theme }) => ({
   backgroundColor: theme.tertiary,
   color: theme.secondary,
   transition: "all 0.5s",
-  boxShadow: "-4px 7px 12px -5px rgba(0,0,0,0.5)",
+  boxShadow: "-4px 7px 12px -5px rgba(0,0,0,0.2)",
   // animation: "rotate 2s linear infinite",
   "&:hover": {
     backgroundColor: theme.primary,

@@ -36,10 +36,11 @@ const Item = styled(IconButton)(({ theme, index }) => ({
   backgroundColor: theme.tertiary,
   color: theme.secondary,
   transition: `transform 0.5s calc(0.05s * ${index}),
-        backgroundColor 0.2s linear,
-        color 0.2s linear`,
-  transitionDelay: ``,
+        background-color 0.25s linear,
+        color 0.25s linear`,
+
   "&.open": {
+    boxShadow: "-4px 7px 12px -5px rgba(0,0,0,0.2)",
     transform: `translateY(calc(45 * ${index}px))`,
   },
   "&:hover": {

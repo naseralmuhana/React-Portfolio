@@ -46,11 +46,11 @@ export const IconButtonColor = styled(IconButton)(({ theme, col, index }) => ({
     backgroundColor: col,
   },
   "&.open": {
+    boxShadow: "-4px 7px 12px -5px rgba(0,0,0,0.3)",
     transform: `translateY(calc(45 * ${index}px))`,
   },
   "&.whiteBlack": {
     color: "#212121",
     background: "linear-gradient(45deg, #EAEAEA 50%,#000000 50%)",
-    border: "1px solid #000000",
   },
 }))
