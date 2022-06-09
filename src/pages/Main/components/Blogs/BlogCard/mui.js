@@ -28,20 +28,6 @@ export const Card = styled("a")(({ theme }) => ({
     filter: "grayscale(0)",
     transform: "scale(1.0)",
   },
-  [theme.breakpoints.between(992, 1380)]: {
-    height: "430px",
-  },
-  [theme.breakpoints.down(992)]: {
-    height: "450px",
-    margin: "2rem 0",
-  },
-  [theme.breakpoints.down(800)]: {
-    margin: "1rem auto",
-  },
-  [theme.breakpoints.down(600)]: {
-    width: "300px",
-    margin: "1rem 0",
-  },
   [theme.breakpoints.down(360)]: {
     transform: "scale(0.9)",
   },

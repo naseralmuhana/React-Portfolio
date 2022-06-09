@@ -71,7 +71,7 @@ export const Body = styled("div")(({ theme }) => ({
   paddingTop: "8rem",
   height: "fit-content",
   [theme.breakpoints.down(992)]: {
-    paddingTop: "2rem",
+    // paddingTop: "2rem",
     flexDirection: "column-reverse",
     justifyContent: "space-evenly",
   },

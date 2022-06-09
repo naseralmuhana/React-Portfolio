@@ -36,14 +36,24 @@ export const CardsContainer = styled("div")(({ theme }) => ({
   justifyContent: "center",
   width: "100%",
   gap: "4.5rem",
+  [theme.breakpoints.down(1100)]: {
+    gap: "2.75rem",
+  },
   [theme.breakpoints.down(992)]: {
-    // flexWrap: "wrap",
-    flexDirection: "column",
+    flexWrap: "wrap",
+    gap: "3.5rem",
   },
   [theme.breakpoints.down(800)]: {
-    // gap: "2.5rem",
     flexDirection: "column",
   },
+  // [theme.breakpoints.down(992)]: {
+  //   // flexWrap: "wrap",
+  //   flexDirection: "column",
+  // },
+  // [theme.breakpoints.down(800)]: {
+  //   // gap: "2.5rem",
+  //   flexDirection: "column",
+  // },
   // [theme.breakpoints.down(600)]: {
   //   flexDirection: "column",
   //   flexWrap: "nowrap",
@@ -64,6 +74,9 @@ export const ViewAllContainer = styled("div")(({ theme }) => ({
       left: "50%",
       transform: "translateX(-50%)",
     },
+  },
+  [theme.breakpoints.down(800)]: {
+    justifyContent: "center",
   },
   [theme.breakpoints.down(600)]: {
     marginTop: "2.5rem",

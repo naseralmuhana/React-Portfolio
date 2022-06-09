@@ -34,9 +34,9 @@ export const DescriptionContainer = styled("div")(({ theme }) => ({
     flex: 1,
     margin: "auto",
   },
-  [theme.breakpoints.down(800)]: {
-    padding: "1rem",
-  },
+  // [theme.breakpoints.down(800)]: {
+  //   padding: "1rem",
+  // },
 }))
 
 // Section Image Container

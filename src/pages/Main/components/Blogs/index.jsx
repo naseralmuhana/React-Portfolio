@@ -25,20 +25,20 @@ const Blogs = () => {
       <Body>
         {/* Cards */}
         <CardsContainer>{cards}</CardsContainer>
+        {/* ViewAll Button*/}
+        {blogData.length > 3 && (
+          <ViewAllContainer>
+            <Link to="/blogs">
+              <CustomTooltip title="BLOGS">
+                <ViewAllBtn>
+                  View All
+                  <ViewAllIcon />
+                </ViewAllBtn>
+              </CustomTooltip>
+            </Link>
+          </ViewAllContainer>
+        )}
       </Body>
-      {/* ViewAll Button*/}
-      {blogData.length > 3 && (
-        <ViewAllContainer>
-          <Link to="/blogs">
-            <CustomTooltip title="BLOGS">
-              <ViewAllBtn>
-                View All
-                <ViewAllIcon />
-              </ViewAllBtn>
-            </CustomTooltip>
-          </Link>
-        </ViewAllContainer>
-      )}
     </Section>
   )
 }
