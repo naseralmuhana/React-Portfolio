@@ -24,20 +24,10 @@
 
 body {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 /* DEFAULT */
 a {
   text-decoration: none;
-}
-
-/* body {
-  overflow-x: hidden;
-} */
-
-/* MEDIA QUERY */
-@media screen and (max-width: 400px) {
-  body {
-    overflow-x: hidden;
-  }
 }

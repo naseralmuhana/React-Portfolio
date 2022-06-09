@@ -11,6 +11,7 @@ const TypeSwitcherButton = ({ isOpen }) => {
 
   useEffect(() => {
     const selector = document.documentElement.style
+    selector.setProperty("--backgroundColor", themeMode.secondary)
     selector.setProperty("--scrollbarBackground", themeMode.secondary70)
     selector.setProperty("--scrollbarThumbBackground", themeMode.primary)
     selector.setProperty(

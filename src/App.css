@@ -3,17 +3,21 @@
   --primaryFont: "Poppins", sans-serif;
   /* --primaryFont: 'Montserrat', sans-serif; */
   /* --primaryFont: 'Raleway', sans-serif; */
-
+  --backgroundColor: #202324;
   --scrollbarBackground: #202324;
   --scrollbarThumbBackground: #454a4d;
   --scrollbarThumbBackgroundHover: #454a4d;
   --scrollbarThumbBackgroundActive: #454a4d;
 }
 
+body {
+  background-color: var(--backgroundColor);
+}
+
 /* scrollBar */
 
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 10px;
   background-color: var(--scrollbarBackground);
 }
 

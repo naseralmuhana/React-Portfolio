@@ -1,12 +1,10 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { Link } from "react-router-dom"
-import ColorSwitcher from "../ColorSwitcher"
 import Wrapper from "../Wrapper"
 // prettier-ignore
 import {
     Body, Content, GridContainer, Header, HomeIcon, Search, Section
 } from "./mui"
-import { animateScroll as scroll } from "react-scroll"
 
 const PageTemplate = (props) => {
   const { tabTitle, title, placeholder, children, onSearch } = props
@@ -18,41 +16,34 @@ const PageTemplate = (props) => {
     onSearch(e.target.value)
   }
 
-  useEffect(() => {
-    scroll.scrollToTop()
-  }, [])
-
   return (
-    <>
-      <ColorSwitcher />
-      <Wrapper title={tabTitle}>
-        <Section>
-          {/* Header */}
-          <Header>
-            <Link to="/">
-              <HomeIcon />
-            </Link>
-            <h1>{title}</h1>
-          </Header>
-          {/* Body */}
-          <Body>
-            {/* Search */}
-            <Search>
-              <input
-                type="text"
-                value={search}
-                onChange={handleSearchChange}
-                placeholder={placeholder}
-              />
-            </Search>
-            {/* Content */}
-            <Content>
-              <GridContainer container>{children}</GridContainer>
-            </Content>
-          </Body>
-        </Section>
-      </Wrapper>
-    </>
+    <Wrapper title={tabTitle}>
+      <Section>
+        {/* Header */}
+        <Header>
+          <Link to="/">
+            <HomeIcon />
+          </Link>
+          <h1>{title}</h1>
+        </Header>
+        {/* Body */}
+        <Body>
+          {/* Search */}
+          <Search>
+            <input
+              type="text"
+              value={search}
+              onChange={handleSearchChange}
+              placeholder={placeholder}
+            />
+          </Search>
+          {/* Content */}
+          <Content>
+            <GridContainer container>{children}</GridContainer>
+          </Content>
+        </Body>
+      </Section>
+    </Wrapper>
   )
 }
 

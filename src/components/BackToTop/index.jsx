@@ -6,7 +6,7 @@ import CustomTooltip from "../CustomTooltip"
 import { useVisibility } from "../../hooks"
 import { animateScroll as scroll } from "react-scroll"
 
-const ScrollToTop = () => {
+const BackToTop = () => {
   const isVisible = useVisibility()
 
   const handleScroll = () => {
@@ -32,7 +32,7 @@ const ScrollToTop = () => {
   )
 }
 
-export default ScrollToTop
+export default BackToTop
 
 const Container = styled(Box)(({ theme, isvisible }) => ({
   // display: isvisible === "true" ? "inline" : "none",

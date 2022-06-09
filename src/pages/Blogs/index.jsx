@@ -9,7 +9,7 @@ const Blogs = () => {
     setFilteredBlogs(
       blogData.filter((blog) => {
         const content = blog.title + blog.description + blog.date
-        return content.toLowerCase().includes(search.toLowerCase())
+        return content.toLowerCase().includes(search.trim().toLowerCase())
       })
     )
   }

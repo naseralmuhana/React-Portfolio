@@ -1,6 +1,6 @@
 export { default as Footer } from "./Footer"
 export { default as PageTemplate } from "./PageTemplate"
-export { default as ScrollToTop } from "./ScrollToTop"
+export { default as BackToTop } from "./BackToTop"
 export { default as ColorSwitcher } from "./ColorSwitcher"
 export { default as CustomTooltip } from "./CustomTooltip"
 export { default as CustomMenu } from "./CustomMenu"
