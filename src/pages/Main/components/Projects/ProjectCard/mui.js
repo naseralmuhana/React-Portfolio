@@ -85,23 +85,26 @@ export const ContentActions = styled("div")({
  */
 
 // Card Content Button
-export const Btn = styled("a")(({ theme }) => ({
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  width: 40,
-  height: 40,
-  borderRadius: 50,
-  border: `2px solid ${theme.tertiary}`,
-  color: theme.tertiary,
-  transition: "all 0.2s, transform 0.5s 0.3s",
-  "&:hover": {
-    backgroundColor: theme.secondary,
-    color: theme.primary,
-    transform: "scale(1.1)",
-    border: `2px solid ${theme.secondary}`,
-  },
-}))
+export const Btn = styled("a")(({ theme, disabled }) => {
+  return {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    width: 40,
+    height: 40,
+    borderRadius: 50,
+    border: `2px solid ${theme.tertiary}`,
+    color: theme.tertiary,
+    cursor: disabled ? "not-allowed" : "pointer",
+    transition: "all 0.2s, transform 0.5s 0.3s",
+    "&:hover": {
+      backgroundColor: theme.secondary,
+      color: theme.primary,
+      transform: "scale(1.1)",
+      border: `2px solid ${theme.secondary}`,
+    },
+  }
+})
 
 // Card Content Icon Button
 export const BtnIcon = styled(Box)({

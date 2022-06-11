@@ -6,6 +6,20 @@ const IconBtn = ({ href, name, icon, iconId }) => {
   ${name?.replace(" ", "-").toLowerCase()}-code`
   const btnIconId = `${name?.replace(" ", "-").toLowerCase()}-demo`
 
+  if (!href) {
+    return (
+      <CustomTooltip title="There is no Dome yet, check the Code">
+        <Btn disabled={true}>
+          <BtnIcon
+            component={icon}
+            id={btnIconId} //BtnIconId
+            aria-label={iconId}
+          />
+        </Btn>
+      </CustomTooltip>
+    )
+  }
+
   return (
     <CustomTooltip title={iconId}>
       <Btn

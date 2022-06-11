@@ -1,19 +1,21 @@
-import { Link } from "react-router-dom"
 // prettier-ignore
-import { CustomTooltip, SectionHeader, SectionTitle } from "../../../../components"
+import { SectionHeader, SectionTitle, ViewAllBtn } from "../../../../components"
 import { blogData } from "../../../../data"
 import BlogCard from "./BlogCard"
 // prettier-ignore
 import {
-  Body, CardsContainer, Section, ViewAllBtn, ViewAllContainer, ViewAllIcon
+  Body, CardsContainer, Section
 } from "./mui"
 
 const Blogs = () => {
   if (blogData.length === 0) return
+
   const cards = blogData
     .slice(0, 3)
     .reverse()
     .map((blog) => <BlogCard key={blog.id} blog={blog} />)
+
+  const button = blogData.length > 3 && <ViewAllBtn title="BLOGS" to="/blogs" />
   return (
     <Section id="blogs">
       {/* Header */}
@@ -26,18 +28,7 @@ const Blogs = () => {
         {/* Cards */}
         <CardsContainer>{cards}</CardsContainer>
         {/* ViewAll Button*/}
-        {blogData.length > 3 && (
-          <ViewAllContainer>
-            <Link to="/blogs">
-              <CustomTooltip title="BLOGS">
-                <ViewAllBtn>
-                  View All
-                  <ViewAllIcon />
-                </ViewAllBtn>
-              </CustomTooltip>
-            </Link>
-          </ViewAllContainer>
-        )}
+        {button}
       </Body>
     </Section>
   )
